@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E Glennon - Drone Pilot & GIS Services</title>
+    <meta name="description" content="Freelance drone piloting with GIS expertise in Maryland. Offering real estate photography, inspections, and GIS mapping services.">
+    <meta name="keywords" content="drone pilot, GIS specialist, Maryland, aerial photography, inspections, mapping">
+    <style>
+        /* Reset and base styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        /* Container for centering and max width */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        /* Header */
+        header {
+            background-color: #007BFF;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        header p {
+            font-size: 1.2rem;
+        }
+        /* Logo placeholder - replace with actual image or remove */
+        #logo-placeholder {
+            width: 100px;
+            height: 100px;
+            background-color: #cccccc;
+            margin: 10px auto;
+            border-radius: 50%;
+        }
+        /* Navigation */
+        nav {
+            background-color: #ffffff;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+        }
+        nav li {
+            margin: 0 20px;
+        }
+        nav a {
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #007BFF;
+        }
+        /* Sections */
+        section {
+            padding: 60px 0;
+        }
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        /* Home */
+        #home p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        #home a {
+            display: inline-block;
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        #home a:hover {
+            background-color: #0056b3;
+        }
+        /* Services */
+        #services ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            list-style: none;
+        }
+        #services li {
+            width: 100%;
+            max-width: 400px;
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        #services li img {
+            width: 100px;
+            height: 100px;
+            background-color: #cccccc;
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+        /* About */
+        #about .bio {
+            max-width: 800px;
+            margin: 0 auto 20px;
+        }
+        #about ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            list-style: none;
+        }
+        #about li {
+            margin: 0 10px;
+            padding: 10px;
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+        }
+        /* Contact */
+        #contact form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+        }
+        #contact label {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        #contact input, #contact textarea {
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        #contact button {
+            padding: 12px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+        #contact button:hover {
+            background-color: #0056b3;
+        }
+        #social-links {
+            text-align: center;
+            margin-top: 20px;
+        }
+        #social-links a {
+            margin: 0 10px;
+            color: #007BFF;
+            text-decoration: none;
+        }
+        /* Footer */
+        footer {
+            background-color: #007BFF;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+        footer p {
+            margin-bottom: 10px;
+        }
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            nav li {
+                margin: 5px 0;
+            }
+            #services ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            section {
+                padding: 40px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="home">
+        <div class="container">
+            <!-- Logo placeholder - replace src with actual image or remove -->
+            <div id="logo-placeholder" alt="Your Logo"></div>
+            <h1>E Glennon</h1><!-- Edit your name here -->
+            <p>Certified Drone Pilot & GIS Specialist Offering Aerial Services in Maryland</p><!-- Edit tagline here -->
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <section class="container">
+        <h2>Home</h2>
+        <p>Welcome to my portfolio. As a Part 107 certified drone pilot with a GIS degree from UMD, I blend aerial imagery with geospatial analysis for high-quality results. I serve Maryland and surrounding areas, providing professional, efficient, and affordable aerial services.</p><!-- Edit introductory paragraph here -->
+        <a href="#services">View Services</a>
+    </section>
+    <section class="container" id="services">
+        <h2>Services</h2>
+        <ul>
+            <li>
+                <img src="" alt="Placeholder for real estate image"><!--
+                    Replace src with actual image path or icon. Edit description below. -->
+                <h3>Real Estate Photography & Videography</h3>
+                <p>High-resolution aerial shots and 4K video to showcase properties for agents, developers, and marketing campaigns. Capture stunning vistas that highlight unique features.</p>
+            </li>
+            <li>
+                <img src="" alt="Placeholder for inspection image"><!--
+                    Replace src with actual image path or icon. Edit description below. -->
+                <h3>Infrastructure Inspections</h3>
+                <p>Safe and efficient roof, building, and site inspections using advanced DJI drones. Utilize thermal imaging for undetected issues, saving time and costs.</p>
+            </li>
+            <li>
+                <img src="" alt="Placeholder for mapping image"><!--
+                    Replace src with actual image path or icon. Edit description below. -->
+                <h3>GIS Mapping & Analysis</h3>
+                <p>Integrate drone data into GIS tools like ArcGIS for orthomosaics, 3D models, and custom maps. Ideal for construction, agriculture, environmental monitoring, and more.</p>
+            </li>
+        </ul>
+    </section>
+    <section class="container" id="about">
+        <h2>About Me</h2>
+        <div class="bio">
+            <p>Recent UMD GIS graduate passionate about UAV technology. With my Part 107 certification and hands-on projects, I'm building experience through freelance gigs while helping clients achieve precise, actionable insights from the sky.</p><!-- Edit bio paragraph here -->
+        </div>
+        <ul>
+            <li>Drone Operation & Piloting</li><!-- Edit skills list as needed -->
+            <li>GIS Software (ArcGIS, QGIS)</li>
+            <li>Photogrammetry & Data Processing</li>
+            <li>Thermal & Multispectral Imaging</li>
+        </ul>
+    </section>
+    <section class="container" id="contact">
+        <h2>Contact Me</h2>
+        <form action="mailto:placeholder@email.com" method="post" enctype="text/plain"><!--
+            Edit action="mailto:YOUR_EMAIL_HERE" to your actual email. -->
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+        <div id="social-links">
+            <p>Connect with me:</p>
+            <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a><!-- Edit links to your profiles -->
+            <a href="https://twitter.com/yourhandle" target="_blank">X (Twitter)</a>
+            <a href="https://instagram.com/yourhandle" target="_blank">Instagram</a>
+        </div>
+    </section>
+    <footer>
+        <p>© 2025 E Glennon | All Rights Reserved</p><!-- Edit copyright year and name -->
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </footer>
+</body>
+</html>
