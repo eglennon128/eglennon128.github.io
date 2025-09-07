@@ -1,301 +1,326 @@
+<!-- index.html — Drone & GIS Portfolio Homepage -->
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ethan Glennon - Drone Pilot & GIS Services</title>
-    <meta name="description" content="Freelance drone piloting with GIS expertise in Maryland. Offering real estate photography, inspections, and GIS mapping services.">
-    <meta name="keywords" content="drone pilot, GIS specialist, Maryland, aerial photography, inspections, mapping">
-    <style>
-        /* Reset and base styles */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f8f9fa;
-        }
-        /* Container for centering and max width */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        /* Header */
-        header {
-            background-color: #007BFF;
-            color: white;
-            padding: 20px 0;
-            text-align: center;
-        }
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-        header p {
-            font-size: 1.2rem;
-        }
-        /* Logo placeholder - replace with actual image or remove */
-        #logo-placeholder {
-            width: 100px;
-            height: 100px;
-            background-color: #cccccc;
-            margin: 10px auto;
-            border-radius: 50%;
-        }
-        /* Navigation */
-        nav {
-            background-color: #ffffff;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            padding: 10px 0;
-        }
-        nav li {
-            margin: 0 20px;
-        }
-        nav a {
-            color: #333;
-            text-decoration: none;
-            font-weight: bold;
-            padding: 10px;
-            transition: color 0.3s;
-        }
-        nav a:hover {
-            color: #007BFF;
-        }
-        /* Sections */
-        section {
-            padding: 60px 0;
-        }
-        h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        /* Home */
-        #home p {
-            font-size: 1.1rem;
-            margin-bottom: 20px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        #home a {
-            display: inline-block;
-            background-color: #007BFF;
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-        #home a:hover {
-            background-color: #0056b3;
-        }
-        /* Services */
-        #services ul {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            list-style: none;
-        }
-        #services li {
-            width: 100%;
-            max-width: 400px;
-            margin-bottom: 20px;
-            padding: 20px;
-            background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            text-align: center;
-        }
-        #services li img {
-            width: 100px;
-            height: 100px;
-            background-color: #cccccc;
-            margin-bottom: 15px;
-            border-radius: 8px;
-        }
-        /* About */
-        #about .bio {
-            max-width: 800px;
-            margin: 0 auto 20px;
-        }
-        #about ul {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            list-style: none;
-        }
-        #about li {
-            margin: 0 10px;
-            padding: 10px;
-            background-color: #ffffff;
-            border-radius: 5px;
-            box-shadow: 0 1px 5px rgba(0,0,0,0.1);
-        }
-        /* Contact */
-        #contact form {
-            max-width: 600px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-        }
-        #contact label {
-            margin-top: 10px;
-            font-weight: bold;
-        }
-        #contact input, #contact textarea {
-            padding: 10px;
-            margin: 5px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        #contact button {
-            padding: 12px;
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 10px;
-            transition: background-color 0.3s;
-        }
-        #contact button:hover {
-            background-color: #0056b3;
-        }
-        #social-links {
-            text-align: center;
-            margin-top: 20px;
-        }
-        #social-links a {
-            margin: 0 10px;
-            color: #007BFF;
-            text-decoration: none;
-        }
-        /* Footer */
-        footer {
-            background-color: #007BFF;
-            color: white;
-            text-align: center;
-            padding: 20px 0;
-        }
-        footer p {
-            margin-bottom: 10px;
-        }
-        footer a {
-            color: white;
-            text-decoration: none;
-            margin: 0 10px;
-        }
-        /* Mobile responsiveness */
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2rem;
-            }
-            nav ul {
-                flex-direction: column;
-                align-items: center;
-            }
-            nav li {
-                margin: 5px 0;
-            }
-            #services ul {
-                flex-direction: column;
-                align-items: center;
-            }
-            section {
-                padding: 40px 0;
-            }
-        }
-    </style>
-</head>
-<body>
-    <header id="home">
-        <div class="container">
-            <!-- Logo placeholder - replace src with actual image or remove -->
-            <div id="logo-placeholder" alt="Your Logo"></div>
-            <h1>Ethan Glennon</h1><!-- Edit your name here -->
-            <p>Certified Drone Pilot & GIS Specialist Offering Aerial Services in Maryland</p><!-- Edit tagline here -->
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Drone & GIS Portfolio | Professional Drone and Mapping Services</title>
+    <meta
+      name="description"
+      content="Drone photography, videography, and GIS mapping services. Aerial media for real estate and events, plus 2D orthomosaics, 3D photogrammetry, and remote sensing."
+    />
+    <link rel="icon" href="/favicon.ico" />
+
+    <!-- Inter font (lightweight) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Tailwind CSS via CDN (for rapid, responsive styling) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom CSS overrides and animations -->
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="font-sans antialiased text-gray-900 bg-white selection:bg-blue-100 selection:text-blue-900 min-h-screen flex flex-col">
+    <!--
+      NOTE: Color palette
+      - Primary blue: #1E40AF
+      - Gray accents: #4B5563
+      Fonts: Inter, then system stack
+    -->
+
+    <header class="relative">
+      <!-- Top Navigation -->
+      <nav class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex items-center justify-between py-3">
+            <!-- Logo / Brand -->
+            <a href="/index.html" class="flex items-center gap-2 group">
+              <span class="inline-flex h-9 w-9 items-center justify-center rounded-md bg-blue-600 text-white shadow-sm group-hover:shadow group-active:scale-[0.98] transition">DG</span>
+              <span class="text-lg font-semibold tracking-tight text-gray-900">Drone &amp; GIS Portfolio</span>
+            </a>
+
+            <!-- Desktop Links -->
+            <div class="hidden md:flex items-center gap-6 text-sm font-medium">
+              <a href="/index.html" class="link-underline text-gray-700 hover:text-blue-700">Home</a>
+              <a href="/about.html" class="link-underline text-gray-700 hover:text-blue-700">About</a>
+              <a href="/services.html" class="link-underline text-gray-700 hover:text-blue-700">Services</a>
+              <a href="/portfolio.html" class="link-underline text-gray-700 hover:text-blue-700">Portfolio</a>
+              <a href="/contact.html" class="link-underline text-gray-700 hover:text-blue-700">Contact</a>
+            </div>
+
+            <!-- Mobile Hamburger -->
+            <button
+              id="menuButton"
+              class="md:hidden inline-flex items-center justify-center rounded-md border border-gray-300 p-2 text-gray-700 hover:bg-gray-50 active:scale-[0.98] transition"
+              aria-label="Open menu"
+              aria-controls="mobileMenu"
+              aria-expanded="false"
+              type="button"
+            >
+              <span class="sr-only">Toggle navigation menu</span>
+              <!-- Burger icon -->
+              <svg class="h-6 w-6 icon-burger" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="3" y1="6" x2="21" y2="6" />
+                <line x1="3" y1="12" x2="21" y2="12" />
+                <line x1="3" y1="18" x2="21" y2="18" />
+              </svg>
+              <!-- Close icon -->
+              <svg class="h-6 w-6 icon-close hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+            </button>
+          </div>
         </div>
+
+        <!-- Mobile dropdown menu (slide-down) -->
+        <div id="mobileMenu" class="collapsible md:hidden border-t border-gray-200 bg-white" hidden>
+          <div class="px-4 py-2 space-y-1 text-base">
+            <a href="/index.html" class="block hover:text-blue-700 py-2">Home</a>
+            <a href="/about.html" class="block hover:text-blue-700 py-2">About</a>
+            <a href="/services.html" class="block hover:text-blue-700 py-2">Services</a>
+            <a href="/portfolio.html" class="block hover:text-blue-700 py-2">Portfolio</a>
+            <a href="/contact.html" class="block hover:text-blue-700 py-2">Contact</a>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Hero Section -->
+      <section class="relative isolate">
+        <!--
+          Hero imagery strategy:
+          - Do NOT lazy-load the hero (LCP) for better performance.
+          - Replace placeholder URL with a compressed local asset.
+          - Suggested tools: Squoosh, ImageOptim, TinyPNG.
+        -->
+        <div class="relative min-h-[60vh] overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1508615039623-a25605d2b022?q=80&w=2000&auto=format&fit=crop"
+            alt="Aerial drone view over landscape"
+            class="absolute inset-0 h-full w-full object-cover"
+            decoding="async"
+            fetchpriority="high"
+          />
+
+          <!-- Overlay -->
+          <div class="relative z-10 flex min-h-[60vh] items-center justify-center bg-black/40">
+            <div class="max-w-3xl mx-auto px-6 text-center text-white">
+              <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight fade-in-up">
+                Professional Drone &amp; GIS Services
+              </h1>
+              <p class="mt-4 text-base sm:text-lg text-gray-100/90 fade-in-up [animation-delay:120ms]">
+                Capturing insights from above — high-impact aerial media and precise geospatial mapping.
+              </p>
+              <div class="mt-8 fade-in-up [animation-delay:240ms]">
+                <a
+                  href="/contact.html"
+                  class="inline-flex items-center gap-2 rounded-md bg-blue-700 px-5 py-3 text-white shadow-lg shadow-blue-900/20 ring-1 ring-blue-800/50 transition
+                         hover:bg-blue-800 hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-700"
+                >
+                  Schedule Consultation
+                  <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M9 18l6-6-6-6"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-black/10"></div>
+        </div>
+      </section>
     </header>
-    <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-    <section class="container">
-        <h2>Home</h2>
-        <p>Welcome to my professional portfolio, where I showcase my expertise as a certified drone pilot and GIS specialist serving clients across Maryland. With a recent degree in Geographic Information Systems from the University of Maryland and Part 107 certification from the FAA, I combine advanced UAV operations with geospatial analysis to deliver precise, high-quality aerial solutions. My services include real estate photography and videography, infrastructure inspections, and GIS-integrated mapping, all tailored to meet the needs of industries like construction, agriculture, and environmental management. By leveraging tools such as the DJI Mavic 4 drone and software like ArcGIS and QGIS, I provide innovative insights that help clients make informed decisions and streamline their projects. Whether you're a real estate agent seeking stunning property visuals or a developer needing detailed site surveys, I'm committed to exceeding expectations with reliable, efficient, and cost-effective results.</p><!-- Edit introductory paragraph here -->
-    </section>
-    <section class="container" id="services">
-        <h2>Services</h2>
-        <ul>
-            <li>
-                <img src="" alt="Placeholder for real estate image"><!--
-                    Replace src with actual image path or icon. Edit description below. -->
-                <h3>Real Estate Photography & Videography</h3>
-                <p>High-resolution aerial shots and 4K video to showcase properties for agents, developers, and marketing campaigns. Capture stunning vistas that highlight unique features.</p>
-            </li>
-            <li>
-                <img src="" alt="Placeholder for inspection image"><!--
-                    Replace src with actual image path or icon. Edit description below. -->
-                <h3>Infrastructure Inspections</h3>
-                <p>Safe and efficient roof, building, and site inspections using advanced DJI drones. Utilize thermal imaging for undetected issues, saving time and costs.</p>
-            </li>
-            <li>
-                <img src="" alt="Placeholder for mapping image"><!--
-                    Replace src with actual image path or icon. Edit description below. -->
-                <h3>GIS Mapping & Analysis</h3>
-                <p>Integrate drone data into GIS tools like ArcGIS for orthomosaics, 3D models, and custom maps. Ideal for construction, agriculture, environmental monitoring, and more.</p>
-            </li>
-        </ul>
-    </section>
-    <section class="container" id="about">
-        <h2>About Me</h2>
-        <div class="bio">
-            <p>I am Ethan Glennon, a dedicated GIS professional and drone enthusiast based in Maryland, holding a bachelor's degree in Geographic Information Systems from the University of Maryland. My passion for unmanned aerial vehicles (UAVs) stems from their transformative potential in data collection and analysis, which I honed through rigorous academic coursework and hands-on projects. As a Part 107 certified drone pilot, I specialize in operating advanced equipment like the DJI Mavic 4 to capture high-resolution imagery, which I then process using GIS tools such as ArcGIS and QGIS for creating orthomosaics, 3D models, and custom geospatial maps. Currently building my career through freelance side gigs and personal initiatives, I've gained practical experience in real-world applications, including property inspections and environmental monitoring. This blend of technical skills and innovative mindset drives me to advance UAV technology, ensuring accurate and actionable insights for clients in diverse sectors like real estate and infrastructure development. I look forward to collaborating on projects that push the boundaries of aerial and geospatial innovation.</p><!-- Edit bio paragraph here -->
+
+    <main class="flex-1 pb-24 md:pb-32">
+      <!-- Services/Portfolio Teasers -->
+      <section class="py-12 sm:py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="mb-8 sm:mb-12 text-center">
+            <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-gray-900">Explore My Work</h2>
+            <p class="mt-2 text-gray-600">From cinematic aerial media to data‑driven geospatial deliverables.</p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+            <!-- Drone Media Card -->
+            <article class="group overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm transition hover:shadow-md">
+              <div class="relative h-52 overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1510466339429-c75f3e1f2f56?q=80&w=1200&auto=format&fit=crop"
+                  alt="Drone flying over modern home"
+                  class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.05]"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                <h3 class="absolute bottom-3 left-4 text-white text-xl font-semibold drop-shadow">Drone Media</h3>
+              </div>
+              <div class="p-5">
+                <p class="text-gray-600">
+                  Aerial photography and videography for real estate, events, marketing, and inspections. Smooth, stabilized footage and crisp stills that elevate your story.
+                </p>
+                <div class="mt-4">
+                  <a href="/portfolio.html#media" class="inline-flex items-center gap-1 text-blue-700 hover:text-blue-800 link-underline">
+                    Explore Media Portfolio
+                    <svg class="h-5 w-5 transition-transform group-hover:translate-x-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M9 18l6-6-6-6"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- GIS Mapping Card -->
+            <article class="group overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm transition hover:shadow-md">
+              <div class="relative h-52 overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1502920917128-1aa500764cbd?q=80&w=1200&auto=format&fit=crop"
+                  alt="Orthomosaic-style field from above"
+                  class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.05]"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                <h3 class="absolute bottom-3 left-4 text-white text-xl font-semibold drop-shadow">GIS Mapping</h3>
+              </div>
+              <div class="p-5">
+                <p class="text-gray-600">
+                  2D orthomosaics, 3D photogrammetry, and remote sensing analyses. Accurate, measurable outputs for agriculture, construction, environmental monitoring, and more.
+                </p>
+                <div class="mt-4">
+                  <a href="/portfolio.html#gis" class="inline-flex items-center gap-1 text-blue-700 hover:text-blue-800 link-underline">
+                    Explore GIS Portfolio
+                    <svg class="h-5 w-5 transition-transform group-hover:translate-x-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M9 18l6-6-6-6"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
         </div>
-    </section>
-    <section class="container" id="contact">
-        <h2>Contact Me</h2>
-        <form action="mailto:placeholder@email.com" method="post" enctype="text/plain"><!--
-            Edit action="mailto:YOUR_EMAIL_HERE" to your actual email. -->
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-        <div id="social-links">
-            <p>Connect with me:</p>
-            <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a><!-- Edit links to your profiles -->
-            <a href="https://twitter.com/yourhandle" target="_blank">X (Twitter)</a>
-            <a href="https://instagram.com/yourhandle" target="_blank">Instagram</a>
+      </section>
+    </main>
+
+    <!--
+      Footer strategy:
+      - Dark, full-width, CTA + quick links + socials
+      - Fixed on desktop to remain visible while scrolling (can remove md:fixed if undesired)
+      - Main has extra bottom padding to avoid overlap when fixed
+      - Copy/paste this footer to other pages for consistency
+      Performance: consider inlining small critical CSS and minifying CSS/JS.
+    -->
+    <footer id="site-footer" class="bg-gray-800 text-gray-300 md:fixed md:bottom-0 md:left-0 md:right-0 z-30">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Signup CTA -->
+        <div class="py-8 md:py-6">
+          <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="text-center md:text-left">
+              <h3 class="text-lg font-semibold text-white">Get Updates</h3>
+              <p class="text-sm text-gray-400">News, new projects, and occasional tips. No spam.</p>
+            </div>
+
+            <form id="signupForm" class="w-full md:w-auto max-w-xl flex items-stretch gap-2" novalidate>
+              <label for="signupEmail" class="sr-only">Email address</label>
+              <input
+                id="signupEmail"
+                name="email"
+                type="email"
+                inputmode="email"
+                autocomplete="email"
+                placeholder="you@example.com"
+                class="flex-1 min-w-0 rounded-md border border-gray-600 bg-gray-900/60 px-3 py-2 text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600"
+                aria-describedby="signupHelp"
+              />
+              <button
+                type="submit"
+                class="rounded-md bg-blue-700 px-4 py-2 text-white font-medium shadow hover:bg-blue-800 active:bg-blue-900 transition"
+              >
+                Get Updates
+              </button>
+            </form>
+          </div>
+          <p id="signupHelp" class="mt-2 text-xs text-gray-400 hidden">Thanks! Check your inbox to confirm.</p>
         </div>
-    </section>
-    <footer>
-        <p>© 2025 Ethan Glennon | All Rights Reserved</p><!-- Edit copyright year and name -->
-        <a href="#home">Home</a>
-        <a href="#services">Services</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+
+        <!-- Divider -->
+        <div class="border-t border-gray-700"></div>
+
+        <!-- Quick links + Socials -->
+        <div class="py-8 grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <!-- Brand & blurb -->
+          <div>
+            <a href="/index.html" class="inline-flex items-center gap-2 text-white">
+              <span class="inline-flex h-9 w-9 items-center justify-center rounded-md bg-blue-600 text-white">DG</span>
+              <span class="font-semibold">Drone &amp; GIS Portfolio</span>
+            </a>
+            <p class="mt-3 text-sm text-gray-400 max-w-sm">
+              Aerial photography/videography and GIS mapping for real estate, agriculture, and environmental applications.
+            </p>
+          </div>
+
+          <!-- Quick Nav -->
+          <div>
+            <h4 class="text-sm font-semibold text-white">Navigate</h4>
+            <ul class="mt-3 space-y-2 text-sm">
+              <li><a href="/index.html" class="link-underline hover:text-white">Home</a></li>
+              <li><a href="/about.html" class="link-underline hover:text-white">About</a></li>
+              <li><a href="/services.html" class="link-underline hover:text-white">Services</a></li>
+              <li><a href="/portfolio.html" class="link-underline hover:text-white">Portfolio</a></li>
+              <li><a href="/contact.html" class="link-underline hover:text-white">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Socials -->
+          <div>
+            <h4 class="text-sm font-semibold text-white">Connect</h4>
+            <ul class="mt-3 flex flex-wrap gap-4 items-center text-sm">
+              <!-- Replace # with your profile links. Icons are placeholders -->
+              <li>
+                <a href="#" class="inline-flex items-center gap-2 hover:text-white" aria-label="LinkedIn">
+                  <!-- LinkedIn icon -->
+                  <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5v16H0zM8 8h4.8v2.2h.1c.7-1.2 2.4-2.5 4.9-2.5 5.2 0 6.2 3.4 6.2 7.9V24h-5v-7.1c0-1.7 0-3.9-2.4-3.9s-2.8 1.9-2.8 3.8V24H8z" />
+                  </svg>
+                  LinkedIn
+                </a>
+              </li>
+              <li>
+                <a href="#" class="inline-flex items-center gap-2 hover:text-white" aria-label="X (Twitter)">
+                  <!-- X/Twitter icon -->
+                  <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M18.244 2H21.5l-7.5 8.573L22.5 22h-6.097l-5.1-5.89L5 22H1.743l8.02-9.17L1 2h6.18l4.62 5.3L18.244 2zm-1.068 18h1.664L7.01 4H5.3l11.876 16z"/>
+                  </svg>
+                  X
+                </a>
+              </li>
+              <li>
+                <a href="#" class="inline-flex items-center gap-2 hover:text-white" aria-label="YouTube">
+                  <!-- YouTube icon -->
+                  <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.6 3.6 12 3.6 12 3.6s-7.6 0-9.4.5A3 3 0 0 0 .5 6.2 31.2 31.2 0 0 0 0 12a31.2 31.2 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.8.5 9.4.5 9.4.5s7.6 0 9.4-.5a3 3 0 0 0 2.1-2.1A31.2 31.2 0 0 0 24 12a31.2 31.2 0 0 0-.5-5.8zM9.75 15.5v-7l6 3.5-6 3.5z"/>
+                  </svg>
+                  YouTube
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Bottom bar -->
+        <div class="border-t border-gray-700"></div>
+        <div class="py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-400">
+          <p>© 2025 Your Name</p>
+          <p>
+            <a href="mailto:hello@example.com" class="hover:text-white">hello@example.com</a>
+            <span class="mx-2">·</span>
+            <a href="/contact.html" class="link-underline hover:text-white">Schedule a consultation</a>
+          </p>
+        </div>
+      </div>
     </footer>
-</body>
-</html>
+
+    <!-- App JS: handles mobile menu + footer form -->
+    <script src="./script.js" defer></script>
+  </body>
+  </html>

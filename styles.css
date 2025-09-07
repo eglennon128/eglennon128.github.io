@@ -1,0 +1,123 @@
+/* styles.css — Custom overrides and animations
+   This file showcases hand‑coded styles layered on top of Tailwind.
+   In production, consider minifying (e.g., cssnano) and purging unused classes. */
+
+/* Base font stack and color variables for quick tweaks */
+:root {
+  --primary: #1E40AF; /* blue-800 */
+  --primary-700: #1D4ED8; /* blue-700 (tailwind-ish) */
+  --blue-700: #1E40AF; /* legacy alias */
+  --gray-900: #111827;
+  --gray-800: #1F2937; /* footer bg */
+  --gray-700: #374151;
+  --gray-600: #4B5563;
+  --radius: 0.5rem;
+}
+
+html, body {
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+}
+
+/* Headings and paragraphs base rhythm */
+h1, h2, h3, h4 { color: #0f172a; /* slate-900 */ }
+p { line-height: 1.65; }
+
+/* Underline reveal effect for links (used in nav and CTAs) */
+.link-underline {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 2px;
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  transition: background-size 200ms ease, color 150ms ease;
+}
+.link-underline:hover {
+  background-size: 100% 2px;
+}
+
+/* Mobile menu slide-down animation using max-height transition */
+.collapsible {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 260ms ease, opacity 220ms ease;
+}
+.collapsible.open {
+  max-height: 360px; /* sufficient for 5 links; adjust if needed */
+  opacity: 1;
+}
+
+/* Subtle entrance animation for hero text */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 10px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 520ms ease both;
+}
+
+/* Utility to delay animation via arbitrary values if needed */
+.fade-in-up[style*="animation-delay"] {
+  /* Safe default to ensure override wins */
+}
+
+/* Buttons: add subtle elevation on hover (complements Tailwind) */
+.btn-elevate {
+  transition: transform 180ms ease, box-shadow 220ms ease;
+}
+.btn-elevate:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px -8px rgba(30, 64, 175, 0.35);
+}
+
+/* Primary button baseline (optional utility) */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1rem;
+  border-radius: var(--radius);
+  background: var(--primary);
+  color: #fff;
+  box-shadow: 0 10px 24px -12px rgba(30, 64, 175, 0.45);
+  transition: transform 180ms ease, box-shadow 220ms ease, background 200ms ease;
+}
+.btn:hover { transform: translateY(-1px); background: #1e3a8a; }
+.btn:active { transform: translateY(0); box-shadow: 0 6px 18px -12px rgba(30, 64, 175, 0.45); }
+
+/* Card hover accent */
+.card {
+  transition: transform 220ms ease, box-shadow 260ms ease;
+}
+.card:hover {
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 18px 36px -20px rgba(0,0,0,0.35);
+}
+
+/* Simple grid helpers if not using Tailwind utilities */
+.auto-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+.grid { gap: 1rem; }
+
+/* Breakpoints in case Tailwind isn't enough in a section */
+@media (min-width: 640px) { /* sm */ }
+@media (min-width: 768px) { /* md */ }
+@media (min-width: 1024px) { /* lg */ }
+
+/*
+  Performance notes:
+  - Compress images (Squoosh, ImageOptim, TinyPNG) and prefer modern formats (WebP/AVIF).
+  - Consider self-hosting fonts with font-display: swap for best CLS.
+  - Leverage HTTP caching (Cache-Control, ETag) via your host/CDN. Preload critical assets if needed.
+  - Minify CSS/JS for production and purge unused Tailwind classes.
+*/
