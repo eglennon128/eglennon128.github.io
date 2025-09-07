@@ -80,35 +80,5 @@
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  // Basic email signup validation (placeholder behavior)
-  const signupForm = document.getElementById('signupForm');
-  const signupEmail = document.getElementById('signupEmail');
-  const signupHelp = document.getElementById('signupHelp');
-  if (signupForm && signupEmail) {
-    signupForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const email = (signupEmail.value || '').trim();
-      const valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-      if (!valid) {
-        signupEmail.focus();
-        signupEmail.setAttribute('aria-invalid', 'true');
-        signupEmail.classList.add('ring-2', 'ring-red-600', 'border-red-600');
-        if (signupHelp) {
-          signupHelp.textContent = 'Please enter a valid email.';
-          signupHelp.classList.remove('hidden');
-          signupHelp.classList.add('text-red-400');
-        }
-        return;
-      }
-      signupEmail.removeAttribute('aria-invalid');
-      signupEmail.classList.remove('ring-2', 'ring-red-600', 'border-red-600');
-      signupEmail.value = '';
-      if (signupHelp) {
-        signupHelp.textContent = 'Thanks! Check your inbox to confirm.';
-        signupHelp.classList.remove('hidden');
-        signupHelp.classList.remove('text-red-400');
-      }
-      // TODO: Hook up to your email provider API (e.g., Buttondown, Mailchimp)
-    });
-  }
+  // Newsletter removed; no signup JS required
 })();

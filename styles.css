@@ -120,4 +120,5 @@ p { line-height: 1.65; }
   - Consider self-hosting fonts with font-display: swap for best CLS.
   - Leverage HTTP caching (Cache-Control, ETag) via your host/CDN. Preload critical assets if needed.
   - Minify CSS/JS for production and purge unused Tailwind classes.
+  - If re-introducing a newsletter banner, keep its height ~20vh on mobile and ~16vh on larger screens.
 */
