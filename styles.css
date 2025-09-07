@@ -114,6 +114,12 @@ p { line-height: 1.65; }
 @media (min-width: 768px) { /* md */ }
 @media (min-width: 1024px) { /* lg */ }
 
+/* Footer compact sizing: keep footprint ~10–15% viewport, max ~160–200px */
+/* Compact footer wrapper to reduce vertical bulk while staying responsive */
+.footer-compact { min-height: 12vh; }
+@media (min-width: 768px) { .footer-compact { min-height: 10vh; } }
+@media (min-width: 1024px) { .footer-compact { min-height: 160px; } }
+
 /*
   Performance notes:
   - Compress images (Squoosh, ImageOptim, TinyPNG) and prefer modern formats (WebP/AVIF).

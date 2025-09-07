@@ -138,7 +138,8 @@
       </section>
     </header>
 
-    <main class="flex-1 pb-24 md:pb-32">
+    <!-- Reduce bottom padding to match more compact footer height -->
+    <main class="flex-1 pb-20 md:pb-24">
       <!-- Services/Portfolio Teasers -->
       <section class="py-12 sm:py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -216,10 +217,11 @@
       - Copy/paste this footer to other pages for consistency
       Performance: consider inlining small critical CSS and minifying CSS/JS.
     -->
-    <footer id="site-footer" class="bg-gray-800 text-gray-300 md:fixed md:bottom-0 md:left-0 md:right-0 z-30">
+    <!-- Make footer more compact via utility paddings and footer-compact class -->
+    <footer id="site-footer" class="bg-gray-800 text-gray-300 md:fixed md:bottom-0 md:left-0 md:right-0 z-30 footer-compact">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Quick links + Socials (newsletter removed per request) -->
-        <div class="py-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div class="py-6 sm:py-5 grid grid-cols-1 sm:grid-cols-2 gap-6 items-start">
           <!-- Brand & blurb -->
           <div>
             <!-- Rebrand: logo square now "G"; replace with custom logo image later -->
@@ -227,16 +229,16 @@
               <span class="inline-flex h-9 w-9 items-center justify-center rounded-md bg-blue-600 text-white" aria-hidden="true">G</span>
               <span class="font-semibold">Glennon Aerial Insights</span>
             </a>
-            <p class="mt-3 text-sm text-gray-400 max-w-sm">
+            <p class="mt-2 text-sm text-gray-400 max-w-sm">
               <!-- Updated description exactly as requested -->
               Aerial photography/videography and GIS mapping for real estate, agriculture, infrastructure, and environmental applications.
             </p>
           </div>
 
           <!-- Socials -->
-          <div>
+          <div class="sm:text-right sm:ml-auto">
             <h4 class="text-sm font-semibold text-white">Connect</h4>
-            <ul class="mt-3 flex flex-wrap gap-4 items-center text-sm">
+            <ul class="mt-2 flex flex-wrap gap-4 items-center justify-start sm:justify-end text-sm">
               <!-- Replace # with your profile links. Icons are placeholders -->
               <li>
                 <a href="#" class="inline-flex items-center gap-2 hover:text-white" aria-label="LinkedIn">
@@ -272,7 +274,7 @@
 
         <!-- Bottom bar -->
         <div class="border-t border-gray-700"></div>
-        <div class="py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-400">
+        <div class="py-3 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-400">
           <!-- Update copyright with your name -->
           <p>© 2025 Ethan Glennon</p>
           <p>
