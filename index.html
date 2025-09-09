@@ -4,13 +4,17 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Caching hint for static site; adjust per host/CDN -->
+    <meta http-equiv="Cache-Control" content="max-age=3600" />
+    <!-- SEO keywords for consistency across pages -->
+    <meta name="keywords" content="drone photography, drone videography, aerial photography, aerial videography, GIS mapping, 2D orthomosaic, 3D photogrammetry, remote sensing, Ethan Glennon, Glennon Aerial Insights" />
     <!-- Rebrand: update site title to Glennon Aerial Insights -->
     <title>Glennon Aerial Insights | Professional Drone and Mapping Services</title>
     <meta
       name="description"
       content="Drone photography, videography, and GIS mapping services. Aerial media for real estate and events, plus 2D orthomosaics, 3D photogrammetry, and remote sensing."
     />
-    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" href="./favicon.ico" />
 
     <!-- Inter font (lightweight) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -41,7 +45,7 @@
           <div class="flex items-center justify-between py-3">
             <!-- Logo / Brand -->
             <!-- Rebrand: blue square "GAI"; replace with custom logo image later -->
-            <a href="/index.html" class="flex items-center gap-3 group">
+            <a href="index.html" class="flex items-center gap-3 group">
               <span class="inline-flex h-9 w-9 items-center justify-center rounded-md bg-blue-600 text-white text-[0.8rem] font-semibold tracking-tight shadow-sm group-hover:shadow group-active:scale-[0.98] transition" aria-hidden="true">GAI</span>
               <span class="flex flex-col leading-tight">
                 <span class="text-lg font-semibold tracking-tight text-gray-900">Glennon Aerial Insights</span>
@@ -52,11 +56,11 @@
 
             <!-- Desktop Links -->
             <div class="hidden md:flex items-center gap-6 text-sm font-medium">
-              <a href="/index.html" class="link-underline text-gray-700 hover:text-blue-700">Home</a>
-              <a href="/about.html" class="link-underline text-gray-700 hover:text-blue-700">About</a>
-              <a href="/services.html" class="link-underline text-gray-700 hover:text-blue-700">Services</a>
-              <a href="/portfolio.html" class="link-underline text-gray-700 hover:text-blue-700">Portfolio</a>
-              <a href="/contact.html" class="link-underline text-gray-700 hover:text-blue-700">Contact</a>
+              <a href="index.html" class="link-underline text-gray-700 hover:text-blue-700">Home</a>
+              <a href="about.html" class="link-underline text-gray-700 hover:text-blue-700">About</a>
+              <a href="services.html" class="link-underline text-gray-700 hover:text-blue-700">Services</a>
+              <a href="portfolio.html" class="link-underline text-gray-700 hover:text-blue-700">Portfolio</a>
+              <a href="contact.html" class="link-underline text-gray-700 hover:text-blue-700">Contact</a>
             </div>
 
             <!-- Mobile Hamburger -->
@@ -87,11 +91,11 @@
         <!-- Mobile dropdown menu (slide-down) -->
         <div id="mobileMenu" class="collapsible md:hidden border-t border-gray-200 bg-white" hidden>
           <div class="px-4 py-2 space-y-1 text-base">
-            <a href="/index.html" class="block hover:text-blue-700 py-2">Home</a>
-            <a href="/about.html" class="block hover:text-blue-700 py-2">About</a>
-            <a href="/services.html" class="block hover:text-blue-700 py-2">Services</a>
-            <a href="/portfolio.html" class="block hover:text-blue-700 py-2">Portfolio</a>
-            <a href="/contact.html" class="block hover:text-blue-700 py-2">Contact</a>
+            <a href="index.html" class="block hover:text-blue-700 py-2">Home</a>
+            <a href="about.html" class="block hover:text-blue-700 py-2">About</a>
+            <a href="services.html" class="block hover:text-blue-700 py-2">Services</a>
+            <a href="portfolio.html" class="block hover:text-blue-700 py-2">Portfolio</a>
+            <a href="contact.html" class="block hover:text-blue-700 py-2">Contact</a>
           </div>
         </div>
       </nav>
@@ -134,9 +138,10 @@
             </p>
             <div class="mt-8 fade-in-up [animation-delay:240ms]">
               <a
-                href="/contact.html"
+                href="contact.html"
                 class="inline-flex items-center gap-2 rounded-md bg-blue-700 px-6 py-3 text-white shadow-lg shadow-blue-900/25 ring-1 ring-blue-800/50 transition
                        hover:bg-blue-800 hover:scale-[1.02] active:scale-[0.99] focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-700 btn-pulse"
+                aria-label="Schedule a consultation"
               >
                 Schedule Consultation
                 <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -162,12 +167,12 @@
             <p class="mt-2 text-gray-600">From cinematic aerial media to data‑driven geospatial deliverables.</p>
           </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8" data-stagger data-stagger-step="90">
             <!-- Drone Media Card -->
             <article class="group overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm transition hover:shadow-md reveal">
               <div class="relative h-56 lg:h-72 overflow-hidden">
-                <img
-                  src="https://images.unsplash.com/photo-1510466339429-c75f3e1f2f56?q=80&w=1200&auto=format&fit=crop"
+                  <img
+                  src="https://images.unsplash.com/photo-1510466339429-c75f3e1f2f56?q=80&w=1200&auto=format&fit=crop&fm=webp"
                   alt="Drone flying over modern home"
                   class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.05]"
                   loading="lazy"
@@ -181,7 +186,7 @@
                   Aerial photography and videography for real estate, events, marketing, and inspections. Smooth, stabilized footage and crisp stills that elevate your story.
                 </p>
                 <div class="mt-4">
-                  <a href="/portfolio-drone.html" class="inline-flex items-center gap-1 text-blue-700 hover:text-blue-800 link-underline">
+                  <a href="portfolio-drone.html" class="inline-flex items-center gap-1 text-blue-700 hover:text-blue-800 link-underline">
                     Explore Media Portfolio
                     <svg class="h-5 w-5 transition-transform group-hover:translate-x-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                       <path d="M9 18l6-6-6-6"></path>
@@ -195,7 +200,7 @@
             <article class="group overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm transition hover:shadow-md reveal lg:translate-y-2">
               <div class="relative h-56 overflow-hidden">
                 <img
-                  src="https://images.unsplash.com/photo-1502920917128-1aa500764cbd?q=80&w=1200&auto=format&fit=crop"
+                  src="https://images.unsplash.com/photo-1502920917128-1aa500764cbd?q=80&w=1200&auto=format&fit=crop&fm=webp"
                   alt="Orthomosaic-style field from above"
                   class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.05]"
                   loading="lazy"
@@ -209,7 +214,7 @@
                   2D orthomosaics, 3D photogrammetry, and remote sensing analyses. Accurate, measurable outputs for agriculture, construction, environmental monitoring, and more.
                 </p>
                 <div class="mt-4">
-                  <a href="/portfolio-gis.html" class="inline-flex items-center gap-1 text-blue-700 hover:text-blue-800 link-underline">
+                  <a href="portfolio-gis.html" class="inline-flex items-center gap-1 text-blue-700 hover:text-blue-800 link-underline">
                     Explore GIS Portfolio
                     <svg class="h-5 w-5 transition-transform group-hover:translate-x-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                       <path d="M9 18l6-6-6-6"></path>
@@ -239,7 +244,7 @@
           <!-- Brand & blurb -->
           <div>
             <!-- Rebrand: logo square now "G"; replace with custom logo image later -->
-            <a href="/index.html" class="inline-flex items-center gap-2 text-white">
+            <a href="index.html" class="inline-flex items-center gap-2 text-white">
               <span class="inline-flex h-9 w-9 items-center justify-center rounded-md bg-blue-600 text-white" aria-hidden="true">G</span>
               <span class="font-semibold">Glennon Aerial Insights</span>
             </a>
@@ -294,7 +299,7 @@
           <p>
             <a href="mailto:hello@example.com" class="hover:text-white">hello@example.com</a>
             <span class="mx-2">·</span>
-            <a href="/contact.html" class="link-underline hover:text-white">Schedule a consultation</a>
+            <a href="contact.html" class="link-underline hover:text-white">Schedule a consultation</a>
           </p>
         </div>
       </div>
@@ -302,5 +307,14 @@
 
     <!-- App JS: handles mobile menu + footer form -->
     <script src="./script.js" defer></script>
+    <!--
+      Testing Guide (quick checklist):
+      - Run Lighthouse (Chrome DevTools) for Mobile + Desktop; check Performance, Best Practices, Accessibility, SEO.
+      - Throttle network (Fast 3G) and CPU 4x; verify lazy-loading works and LCP stays low.
+      - Emulate devices (iPhone SE, iPhone 14 Pro, Pixel 7, iPad) and check layout.
+      - Keyboard navigation: Tab through navbar, accordions, CTAs; ensure focus states are visible.
+      - Visual: Inspect animations with prefers-reduced-motion to confirm acceptable defaults.
+      - Assets: Replace placeholder images with compressed WebP/AVIF; minify CSS/JS before deploy.
+    -->
   </body>
   </html>
