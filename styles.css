@@ -19,7 +19,7 @@ html, body {
 }
 
 /* Display font utility for hero headings */
-.font-display { font-family: 'Playfair Display', Georgia, 'Times New Roman', serif; }
+.font-display { font-family: 'Montserrat', 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
 
 /* Headings and paragraphs base rhythm */
 h1, h2, h3, h4 { color: #0f172a; /* slate-900 */ }
@@ -229,18 +229,36 @@ p { line-height: 1.65; }
   min-width: 40px;
   border-radius: 8px;
 }
+/* Footer text sizing and visibility tuning */
+#site-footer { z-index: 60; font-size: 0.95rem; }
+#site-footer a { color: #d1d5db; }
+#site-footer a:hover { color: #ffffff; }
+#site-footer svg { display: inline-block; opacity: 1; visibility: visible; }
 
-/* Shared hero stripe height (match About page visually) */
-.hero-stripe { min-height: 40vh; }
-.hero-stripe-inner { min-height: 40vh; }
-@media (min-width: 640px) {
-  .hero-stripe { min-height: 44vh; }
-  .hero-stripe-inner { min-height: 44vh; }
+/* Shared hero stripe height for pages (About/Services/Portfolio/Contact) */
+.page-hero { min-height: clamp(320px, 46vh, 520px); }
+.page-hero-inner { min-height: clamp(320px, 46vh, 520px); }
+
+/* Home hero: larger, cohesive sizing */
+.home-hero { min-height: clamp(420px, 72vh, 720px); }
+
+/* Hero badge: larger GAI square centered above H1 */
+.hero-badge { position: relative; z-index: 2; display: grid; place-items: center; margin-bottom: 0.75rem; transform: translateY(-6px); }
+.badge-square {
+  width: clamp(48px, 9vw, 78px);
+  height: clamp(48px, 9vw, 78px);
+  display: grid;
+  place-items: center;
+  border-radius: 0.75rem;
+  background: linear-gradient(135deg, #1D4ED8 0%, #1E40AF 100%);
+  color: #fff;
+  box-shadow: 0 12px 28px -16px rgba(0,0,0,0.45);
+  font-weight: 700;
 }
-@media (min-width: 1024px) {
-  .hero-stripe { min-height: 46vh; }
-  .hero-stripe-inner { min-height: 46vh; }
-}
+
+/* Tighten gap below page heroes */
+header .page-hero + .divider, header .page-hero + .wave-divider { margin-top: -1px; }
+header + main { padding-top: 8px; }
 
 /*
   Performance notes:
