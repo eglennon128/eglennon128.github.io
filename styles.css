@@ -208,11 +208,39 @@ p { line-height: 1.65; }
 }
 .accordion-panel.open { opacity: 1; }
 
-/* Footer compact sizing: keep footprint ~10–15% viewport, max ~160–200px */
+/* Footer compact sizing: keep footprint ~8–12% viewport, max ~140–180px */
 /* Compact footer wrapper to reduce vertical bulk while staying responsive */
-.footer-compact { min-height: 12vh; }
-@media (min-width: 768px) { .footer-compact { min-height: 10vh; } }
-@media (min-width: 1024px) { .footer-compact { min-height: 160px; } }
+.footer-compact { min-height: 10vh; }
+@media (min-width: 768px) { .footer-compact { min-height: 9vh; } }
+@media (min-width: 1024px) { .footer-compact { min-height: 140px; } }
+
+/* Footer: tighter vertical rhythm and slightly smaller icon size */
+.footer-compact .footer-upper { padding-block: 12px; gap: 0.75rem; }
+@media (min-width: 640px) { .footer-compact .footer-upper { padding-block: 14px; } }
+.footer-compact .footer-lower { padding-block: 8px; }
+.footer-compact svg { width: 18px; height: 18px; }
+/* Ensure social links meet 40px tap target while visually compact */
+#site-footer a[aria-label] {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 8px 10px;
+  min-height: 40px;
+  min-width: 40px;
+  border-radius: 8px;
+}
+
+/* Shared hero stripe height (match About page visually) */
+.hero-stripe { min-height: 40vh; }
+.hero-stripe-inner { min-height: 40vh; }
+@media (min-width: 640px) {
+  .hero-stripe { min-height: 44vh; }
+  .hero-stripe-inner { min-height: 44vh; }
+}
+@media (min-width: 1024px) {
+  .hero-stripe { min-height: 46vh; }
+  .hero-stripe-inner { min-height: 46vh; }
+}
 
 /*
   Performance notes:

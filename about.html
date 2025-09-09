@@ -85,10 +85,10 @@
         </div>
       </nav>
 
-      <!-- Bio Hero (shorter, image background) -->
-      <section class="relative isolate">
+      <!-- Bio Hero (unified height) -->
+      <section class="relative isolate hero-stripe">
         <!-- Background image: replace src with optimized local asset (WebP/AVIF preferred) -->
-        <div class="relative min-h-[46vh] overflow-hidden about-hero">
+        <div class="relative overflow-hidden about-hero hero-stripe">
           <img
             src="https://images.unsplash.com/photo-1517976487492-576ea6b2936d?q=80&w=2000&auto=format&fit=crop"
             alt="Drone scene background"
@@ -98,7 +98,7 @@
           />
           <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-black/30 to-black/70"></div>
 
-          <div class="relative z-10 flex min-h-[46vh] items-center justify-center text-center px-6">
+          <div class="relative z-10 flex items-center justify-center text-center px-6 hero-stripe-inner">
             <div class="max-w-3xl mx-auto text-white">
               <div class="inline-flex items-center gap-3 mb-3 justify-center fade-in-up">
                 <span class="inline-flex h-10 w-10 items-center justify-center rounded-md bg-blue-600 text-white text-[0.8rem] font-semibold tracking-tight shadow" aria-hidden="true">GAI</span>
@@ -219,7 +219,7 @@
     <!-- Footer (copied from index.html) -->
     <footer id="site-footer" class="bg-gray-800 text-gray-300 md:fixed md:bottom-0 md:left-0 md:right-0 z-30 footer-compact">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="py-6 sm:py-5 grid grid-cols-1 sm:grid-cols-2 gap-6 items-start">
+        <div class="footer-upper grid grid-cols-1 sm:grid-cols-2 gap-6 items-start">
           <div>
             <a href="index.html" class="inline-flex items-center gap-2 text-white">
               <span class="inline-flex h-9 w-9 items-center justify-center rounded-md bg-blue-600 text-white" aria-hidden="true">G</span>
@@ -256,7 +256,7 @@
         </div>
 
         <div class="border-t border-gray-700"></div>
-        <div class="py-3 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-400">
+        <div class="footer-lower py-3 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-400">
           <p>© 2025 Ethan Glennon</p>
           <p>
             <a href="mailto:hello@example.com" class="hover:text-white">hello@example.com</a>

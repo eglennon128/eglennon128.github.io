@@ -80,9 +80,9 @@
         </div>
       </nav>
 
-      <!-- Overview hero (short) -->
-      <section class="relative isolate">
-        <div class="relative min-h-[36vh] overflow-hidden">
+      <!-- Overview hero (unified height) -->
+      <section class="relative isolate hero-stripe">
+        <div class="relative overflow-hidden hero-stripe">
           <!-- Optional background image; replace with optimized local asset -->
           <img
             src="https://images.unsplash.com/photo-1519680776-8b1b0b89ecf1?q=80&w=2000&auto=format&fit=crop&fm=webp"
@@ -93,7 +93,7 @@
           />
           <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-black/30 to-black/70"></div>
 
-          <div class="relative z-10 flex min-h-[36vh] items-center justify-center text-center px-6">
+          <div class="relative z-10 flex items-center justify-center text-center px-6 hero-stripe-inner">
             <div class="max-w-3xl mx-auto text-white">
               <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-shadow fade-in-up">Our Services</h2>
               <p class="mt-3 text-base sm:text-lg md:text-xl text-white/90 fade-in-up [animation-delay:160ms]">Tailored drone and GIS solutions for your needs.</p>
@@ -248,7 +248,7 @@
     <!-- Footer (copied) -->
     <footer id="site-footer" class="bg-gray-800 text-gray-300 md:fixed md:bottom-0 md:left-0 md:right-0 z-30 footer-compact">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="py-6 sm:py-5 grid grid-cols-1 sm:grid-cols-2 gap-6 items-start">
+        <div class="footer-upper grid grid-cols-1 sm:grid-cols-2 gap-6 items-start">
           <div>
             <a href="index.html" class="inline-flex items-center gap-2 text-white">
               <span class="inline-flex h-9 w-9 items-center justify-center rounded-md bg-blue-600 text-white" aria-hidden="true">G</span>
@@ -285,7 +285,7 @@
         </div>
 
         <div class="border-t border-gray-700"></div>
-        <div class="py-3 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-400">
+        <div class="footer-lower py-3 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-400">
           <p>© 2025 Ethan Glennon</p>
           <p>
             <a href="mailto:hello@example.com" class="hover:text-white">hello@example.com</a>
