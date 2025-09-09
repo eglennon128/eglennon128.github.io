@@ -1,0 +1,307 @@
+<!-- services.html — Services Page for Glennon Aerial Insights -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Services | Glennon Aerial Insights</title>
+    <meta
+      name="description"
+      content="Drone media and GIS mapping services — aerial photography/videography, 2D orthomosaics, 3D photogrammetry, and remote sensing."
+    />
+    <link rel="icon" href="/favicon.ico" />
+
+    <!-- Fonts & Tailwind (match site) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Icons (optional; used for bullets/visuals) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="font-sans antialiased text-gray-900 bg-white selection:bg-blue-100 selection:text-blue-900 min-h-screen flex flex-col">
+    <header class="relative">
+      <!-- Navbar (copied from index.html) -->
+      <nav class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex items-center justify-between py-3">
+            <a href="/index.html" class="flex items-center gap-3 group">
+              <span class="inline-flex h-9 w-9 items-center justify-center rounded-md bg-blue-600 text-white text-[0.8rem] font-semibold tracking-tight shadow-sm group-hover:shadow group-active:scale-[0.98] transition" aria-hidden="true">GAI</span>
+              <span class="flex flex-col leading-tight">
+                <span class="text-lg font-semibold tracking-tight text-gray-900">Glennon Aerial Insights</span>
+                <span class="text-sm text-gray-500">Ethan Glennon</span>
+              </span>
+            </a>
+
+            <div class="hidden md:flex items-center gap-6 text-sm font-medium">
+              <a href="/index.html" class="link-underline text-gray-700 hover:text-blue-700">Home</a>
+              <a href="/about.html" class="link-underline text-gray-700 hover:text-blue-700">About</a>
+              <a href="/services.html" class="text-blue-700">Services</a>
+              <a href="/portfolio.html" class="link-underline text-gray-700 hover:text-blue-700">Portfolio</a>
+              <a href="/contact.html" class="link-underline text-gray-700 hover:text-blue-700">Contact</a>
+            </div>
+
+            <button
+              id="menuButton"
+              class="md:hidden inline-flex items-center justify-center rounded-md border border-gray-300 p-2 text-gray-700 hover:bg-gray-50 active:scale-[0.98] transition"
+              aria-label="Open menu"
+              aria-controls="mobileMenu"
+              aria-expanded="false"
+              type="button"
+            >
+              <span class="sr-only">Toggle navigation menu</span>
+              <svg class="h-6 w-6 icon-burger" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="3" y1="6" x2="21" y2="6" />
+                <line x1="3" y1="12" x2="21" y2="12" />
+                <line x1="3" y1="18" x2="21" y2="18" />
+              </svg>
+              <svg class="h-6 w-6 icon-close hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div id="mobileMenu" class="collapsible md:hidden border-t border-gray-200 bg-white" hidden>
+          <div class="px-4 py-2 space-y-1 text-base">
+            <a href="/index.html" class="block hover:text-blue-700 py-2">Home</a>
+            <a href="/about.html" class="block hover:text-blue-700 py-2">About</a>
+            <a href="/services.html" class="block text-blue-700 py-2">Services</a>
+            <a href="/portfolio.html" class="block hover:text-blue-700 py-2">Portfolio</a>
+            <a href="/contact.html" class="block hover:text-blue-700 py-2">Contact</a>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Overview hero (short) -->
+      <section class="relative isolate">
+        <div class="relative min-h-[36vh] overflow-hidden">
+          <!-- Optional background image; replace with optimized local asset -->
+          <img
+            src="https://images.unsplash.com/photo-1519680776-8b1b0b89ecf1?q=80&w=2000&auto=format&fit=crop"
+            alt="Aerial gradient scene"
+            class="absolute inset-0 h-full w-full object-cover"
+            loading="lazy"
+            decoding="async"
+          />
+          <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-black/30 to-black/70"></div>
+
+          <div class="relative z-10 flex min-h-[36vh] items-center justify-center text-center px-6">
+            <div class="max-w-3xl mx-auto text-white">
+              <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-shadow fade-in-up">Our Services</h2>
+              <p class="mt-3 text-base sm:text-lg md:text-xl text-white/90 fade-in-up [animation-delay:160ms]">Tailored drone and GIS solutions for your needs.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Divider -->
+        <div class="relative -mt-[1px]">
+          <svg class="block w-full" viewBox="0 0 1440 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M0,64L60,74.7C120,85,240,107,360,106.7C480,107,600,85,720,74.7C840,64,960,64,1080,74.7C1200,85,1320,107,1380,117.3L1440,128L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z" fill="#ffffff"></path>
+          </svg>
+        </div>
+      </section>
+    </header>
+
+    <main class="flex-1 pb-20 md:pb-24">
+      <section class="py-10 sm:py-14">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <!-- Accordions Container -->
+          <div class="space-y-6">
+            <!-- Drone Media Accordion -->
+            <section class="accordion-section reveal">
+              <button
+                class="accordion-trigger w-full flex items-center justify-between rounded-md border border-gray-200 bg-white px-4 py-3 text-left shadow-sm hover:shadow transition"
+                aria-expanded="false"
+                aria-controls="panel-drone"
+                id="acc-drone"
+                type="button"
+              >
+                <span class="flex items-center gap-3">
+                  <span class="inline-flex h-8 w-8 items-center justify-center rounded-md bg-blue-600 text-white" aria-hidden="true">
+                    <i class="fa-solid fa-helicopter"></i>
+                  </span>
+                  <span class="font-semibold">Drone Media</span>
+                </span>
+                <svg class="accordion-icon h-5 w-5 text-gray-600 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M6 9l6 6 6-6"></path>
+                </svg>
+              </button>
+              <div
+                id="panel-drone"
+                class="accordion-panel"
+                role="region"
+                aria-labelledby="acc-drone"
+                hidden
+              >
+                <div class="p-5 sm:p-6 border border-gray-200 border-t-0 rounded-b-md bg-white">
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-house-chimney text-blue-700 mt-1"></i> <span><strong>Real Estate Photography/Videography:</strong> High-res aerials for listings, hero shots, and property context.</span></li>
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-people-group text-blue-700 mt-1"></i> <span><strong>Event Coverage:</strong> Dynamic highlight videos for weddings, corporate, and community events.</span></li>
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-screwdriver-wrench text-blue-700 mt-1"></i> <span><strong>Inspections:</strong> Safer, faster visuals for roofs, facades, towers (visual inspection workflows).</span></li>
+                      </ul>
+                      <div class="mt-4 text-sm text-gray-500">Pricing: packages start at <em>$X</em> (placeholder). Half-day and full-day rates available.</div>
+                      <div class="mt-5">
+                        <a href="/contact.html?service=drone-media" class="inline-flex items-center gap-2 rounded-md bg-blue-700 px-5 py-2.5 text-white shadow ring-1 ring-blue-800/50 transition hover:bg-blue-800 hover:scale-[1.02] active:scale-[0.99] btn-pulse">Get a Quote</a>
+                      </div>
+                    </div>
+                    <div>
+                      <!-- Image teaser (lazy) -->
+                      <img
+                        src="https://images.unsplash.com/photo-1510466339429-c75f3e1f2f56?q=80&w=1200&auto=format&fit=crop"
+                        alt="Real estate aerial example"
+                        class="w-full h-56 md:h-full object-cover rounded-md shadow-sm"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </div>
+                  </div>
+
+                  <!-- FAQ (example) -->
+                  <div class="mt-6">
+                    <h4 class="text-sm font-semibold text-gray-900">FAQs</h4>
+                    <ul class="mt-2 text-sm text-gray-700 list-disc list-inside space-y-1">
+                      <li>Turnaround time: typically 24–72 hours depending on scope.</li>
+                      <li>Licensed and insured; FAA Part 107 compliant (placeholder details).</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- GIS Mapping Accordion -->
+            <section class="accordion-section reveal">
+              <button
+                class="accordion-trigger w-full flex items-center justify-between rounded-md border border-gray-200 bg-white px-4 py-3 text-left shadow-sm hover:shadow transition"
+                aria-expanded="false"
+                aria-controls="panel-gis"
+                id="acc-gis"
+                type="button"
+              >
+                <span class="flex items-center gap-3">
+                  <span class="inline-flex h-8 w-8 items-center justify-center rounded-md bg-blue-600 text-white" aria-hidden="true">
+                    <i class="fa-solid fa-map"></i>
+                  </span>
+                  <span class="font-semibold">GIS Mapping</span>
+                </span>
+                <svg class="accordion-icon h-5 w-5 text-gray-600 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M6 9l6 6 6-6"></path>
+                </svg>
+              </button>
+              <div
+                id="panel-gis"
+                class="accordion-panel"
+                role="region"
+                aria-labelledby="acc-gis"
+                hidden
+              >
+                <div class="p-5 sm:p-6 border border-gray-200 border-t-0 rounded-b-md bg-white">
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-layer-group text-blue-700 mt-1"></i> <span><strong>2D Orthomosaics:</strong> Detailed stitched maps from aerial imagery with accurate scale.</span></li>
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-cubes text-blue-700 mt-1"></i> <span><strong>3D Photogrammetry:</strong> Interactive models and DSM/DTM outputs for assets and terrain.</span></li>
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-seedling text-blue-700 mt-1"></i> <span><strong>Remote Sensing Overlays:</strong> Vegetation indices and layer toggles for ag and environmental analysis.</span></li>
+                      </ul>
+                      <div class="mt-4 text-sm text-gray-500">Pricing: project-based; mapping bundles start at <em>$Y</em> (placeholder). Contact for a tailored quote.</div>
+                      <div class="mt-5">
+                        <a href="/contact.html?service=gis-mapping" class="inline-flex items-center gap-2 rounded-md bg-blue-700 px-5 py-2.5 text-white shadow ring-1 ring-blue-800/50 transition hover:bg-blue-800 hover:scale-[1.02] active:scale-[0.99] btn-pulse">Get a Quote</a>
+                      </div>
+                    </div>
+                    <div>
+                      <!-- Image teaser (lazy) -->
+                      <img
+                        src="https://images.unsplash.com/photo-1502920917128-1aa500764cbd?q=80&w=1200&auto=format&fit=crop"
+                        alt="GIS mapping orthomosaic example"
+                        class="w-full h-56 md:h-full object-cover rounded-md shadow-sm"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </div>
+                  </div>
+
+                  <!-- FAQ (example) -->
+                  <div class="mt-6">
+                    <h4 class="text-sm font-semibold text-gray-900">FAQs</h4>
+                    <ul class="mt-2 text-sm text-gray-700 list-disc list-inside space-y-1">
+                      <li>Deliverables: GeoTIFFs, web viewers, shapefiles, and reports per project needs.</li>
+                      <li>Coordinate systems and accuracy specs discussed per use case (placeholder).</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer (copied) -->
+    <footer id="site-footer" class="bg-gray-800 text-gray-300 md:fixed md:bottom-0 md:left-0 md:right-0 z-30 footer-compact">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="py-6 sm:py-5 grid grid-cols-1 sm:grid-cols-2 gap-6 items-start">
+          <div>
+            <a href="/index.html" class="inline-flex items-center gap-2 text-white">
+              <span class="inline-flex h-9 w-9 items-center justify-center rounded-md bg-blue-600 text-white" aria-hidden="true">G</span>
+              <span class="font-semibold">Glennon Aerial Insights</span>
+            </a>
+            <p class="mt-2 text-sm text-gray-400 max-w-sm">
+              Aerial photography/videography and GIS mapping for real estate, agriculture, infrastructure, and environmental applications.
+            </p>
+          </div>
+
+          <div class="sm:text-right sm:ml-auto">
+            <h4 class="text-sm font-semibold text-white">Connect</h4>
+            <ul class="mt-2 flex flex-wrap gap-4 items-center justify-start sm:justify-end text-sm">
+              <li>
+                <a href="#" class="inline-flex items-center gap-2 hover:text-white" aria-label="LinkedIn">
+                  <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5v16H0zM8 8h4.8v2.2h.1c.7-1.2 2.4-2.5 4.9-2.5 5.2 0 6.2 3.4 6.2 7.9V24h-5v-7.1c0-1.7 0-3.9-2.4-3.9s-2.8 1.9-2.8 3.8V24H8z" /></svg>
+                  LinkedIn
+                </a>
+              </li>
+              <li>
+                <a href="https://instagram.com/yourusername" class="inline-flex items-center gap-2 hover:text-white" aria-label="Instagram">
+                  <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 2C4.239 2 2 4.239 2 7v10c0 2.761 2.239 5 5 5h10c2.761 0 5-2.239 5-5V7c0-2.761-2.239-5-5-5H7zm10 2a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3h10zm-5 3.5A5.5 5.5 0 1 0 17.5 13 5.506 5.506 0 0 0 12 7.5zm0 2A3.5 3.5 0 1 1 8.5 13 3.5 3.5 0 0 1 12 9.5zm5.75-3.25a1.25 1.25 0 1 0 1.25 1.25 1.25 1.25 0 0 0-1.25-1.25z"/></svg>
+                  Instagram
+                </a>
+              </li>
+              <li>
+                <a href="#" class="inline-flex items-center gap-2 hover:text-white" aria-label="YouTube">
+                  <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.6 3.6 12 3.6 12 3.6s-7.6 0-9.4.5A3 3 0 0 0 .5 6.2 31.2 31.2 0 0 0 0 12a31.2 31.2 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.8.5 9.4.5 9.4.5s7.6 0 9.4-.5a3 3 0 0 0 2.1-2.1A31.2 31.2 0 0 0 24 12a31.2 31.2 0 0 0-.5-5.8zM9.75 15.5v-7l6 3.5-6 3.5z"/></svg>
+                  YouTube
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="border-t border-gray-700"></div>
+        <div class="py-3 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-400">
+          <p>© 2025 Ethan Glennon</p>
+          <p>
+            <a href="mailto:hello@example.com" class="hover:text-white">hello@example.com</a>
+            <span class="mx-2">·</span>
+            <a href="/contact.html" class="link-underline hover:text-white">Schedule a consultation</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./script.js" defer></script>
+
+    <!--
+      Performance notes:
+      - Replace hero image with compressed local asset (WebP/AVIF) for best LCP.
+      - Icons via CDN for dev; consider self-hosting and minification for production.
+      - Images in details are lazy-loaded; consider srcset/sizes for responsive.
+    -->
+  </body>
+  </html>
+

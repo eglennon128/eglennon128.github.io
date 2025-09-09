@@ -17,6 +17,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
 
+    <!-- Display font for hero headings -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet" />
+
     <!-- Tailwind CSS via CDN (for rapid, responsive styling) -->
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -37,9 +40,9 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="flex items-center justify-between py-3">
             <!-- Logo / Brand -->
-            <!-- Rebrand: logo square now "G"; replace with custom logo image later -->
+            <!-- Rebrand: blue square "GAI"; replace with custom logo image later -->
             <a href="/index.html" class="flex items-center gap-3 group">
-              <span class="inline-flex h-9 w-9 items-center justify-center rounded-md bg-blue-600 text-white shadow-sm group-hover:shadow group-active:scale-[0.98] transition" aria-hidden="true">G</span>
+              <span class="inline-flex h-9 w-9 items-center justify-center rounded-md bg-blue-600 text-white text-[0.8rem] font-semibold tracking-tight shadow-sm group-hover:shadow group-active:scale-[0.98] transition" aria-hidden="true">GAI</span>
               <span class="flex flex-col leading-tight">
                 <span class="text-lg font-semibold tracking-tight text-gray-900">Glennon Aerial Insights</span>
                 <!-- Add name prominently alongside brand -->
@@ -93,48 +96,59 @@
         </div>
       </nav>
 
-      <!-- Hero Section -->
-      <section class="relative isolate">
-        <!--
-          Hero imagery strategy:
-          - Do NOT lazy-load the hero (LCP) for better performance.
-          - Replace placeholder URL with a compressed local asset.
-          - Suggested tools: Squoosh, ImageOptim, TinyPNG.
-        -->
-        <div class="relative min-h-[60vh] overflow-hidden">
-          <img
-            src="https://images.unsplash.com/photo-1508615039623-a25605d2b022?q=80&w=2000&auto=format&fit=crop"
-            alt="Aerial drone view over landscape"
-            class="absolute inset-0 h-full w-full object-cover"
-            decoding="async"
-            fetchpriority="high"
-          />
+      <!-- Hero Section (full-screen, immersive video) -->
+      <section class="relative isolate hero min-h-screen">
+        <!-- Background media: replace src/poster with optimized local assets -->
+        <video
+          class="absolute inset-0 h-full w-full object-cover hero-video"
+          src="placeholder-drone-footage.mp4"
+          autoplay
+          loop
+          muted
+          playsinline
+          preload="metadata"
+          poster="placeholder-hero.jpg"
+          aria-label="Background aerial drone footage"
+        ></video>
 
-          <!-- Overlay -->
-          <div class="relative z-10 flex min-h-[60vh] items-center justify-center bg-black/40">
-            <div class="max-w-3xl mx-auto px-6 text-center text-white">
-              <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight fade-in-up">
-                Professional Drone &amp; GIS Services
-              </h1>
-              <p class="mt-4 text-base sm:text-lg text-gray-100/90 fade-in-up [animation-delay:120ms]">
-                Capturing insights from above — high-impact aerial media and precise geospatial mapping.
-              </p>
-              <div class="mt-8 fade-in-up [animation-delay:240ms]">
-                <a
-                  href="/contact.html"
-                  class="inline-flex items-center gap-2 rounded-md bg-blue-700 px-5 py-3 text-white shadow-lg shadow-blue-900/20 ring-1 ring-blue-800/50 transition
-                         hover:bg-blue-800 hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-700"
-                >
-                  Schedule Consultation
-                  <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path d="M9 18l6-6-6-6"></path>
-                  </svg>
-                </a>
+        <!-- Readability gradient overlay -->
+        <div class="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-gray-900/20 to-gray-900/80"></div>
+
+        <!-- Centered content -->
+        <div class="relative z-10 flex min-h-screen items-center justify-center text-center px-6">
+          <div class="max-w-3xl mx-auto text-white hero-content">
+            <!-- Brand lockup -->
+            <div class="inline-flex items-center gap-3 mb-4 justify-center">
+              <span class="inline-flex h-10 w-10 items-center justify-center rounded-md bg-blue-600 text-white text-[0.8rem] font-semibold tracking-tight shadow" aria-hidden="true">GAI</span>
+              <div class="text-left">
+                <div class="text-sm uppercase tracking-wider text-white/80">Glennon Aerial Insights</div>
+                <div class="text-xs text-white/70">Ethan Glennon</div>
               </div>
             </div>
+
+            <h1 class="font-display text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white text-shadow fade-in-up">
+              Professional Drone &amp; GIS Services
+            </h1>
+            <p class="mt-4 text-base sm:text-lg md:text-xl text-white/90 fade-in-up [animation-delay:120ms]">
+              Capturing insights from above – high-impact aerial media and precise geospatial mapping.
+            </p>
+            <div class="mt-8 fade-in-up [animation-delay:240ms]">
+              <a
+                href="/contact.html"
+                class="inline-flex items-center gap-2 rounded-md bg-blue-700 px-6 py-3 text-white shadow-lg shadow-blue-900/25 ring-1 ring-blue-800/50 transition
+                       hover:bg-blue-800 hover:scale-[1.02] active:scale-[0.99] focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-700 btn-pulse"
+              >
+                Schedule Consultation
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M9 18l6-6-6-6"></path>
+                </svg>
+              </a>
+            </div>
           </div>
-          <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-black/10"></div>
         </div>
+
+        <!-- Decorative bottom vignette -->
+        <div class="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-gray-900 to-transparent"></div>
       </section>
     </header>
 
@@ -150,8 +164,8 @@
 
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
             <!-- Drone Media Card -->
-            <article class="group overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm transition hover:shadow-md">
-              <div class="relative h-52 overflow-hidden">
+            <article class="group overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm transition hover:shadow-md reveal">
+              <div class="relative h-56 lg:h-72 overflow-hidden">
                 <img
                   src="https://images.unsplash.com/photo-1510466339429-c75f3e1f2f56?q=80&w=1200&auto=format&fit=crop"
                   alt="Drone flying over modern home"
@@ -167,7 +181,7 @@
                   Aerial photography and videography for real estate, events, marketing, and inspections. Smooth, stabilized footage and crisp stills that elevate your story.
                 </p>
                 <div class="mt-4">
-                  <a href="/portfolio.html#media" class="inline-flex items-center gap-1 text-blue-700 hover:text-blue-800 link-underline">
+                  <a href="/portfolio-drone.html" class="inline-flex items-center gap-1 text-blue-700 hover:text-blue-800 link-underline">
                     Explore Media Portfolio
                     <svg class="h-5 w-5 transition-transform group-hover:translate-x-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                       <path d="M9 18l6-6-6-6"></path>
@@ -178,8 +192,8 @@
             </article>
 
             <!-- GIS Mapping Card -->
-            <article class="group overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm transition hover:shadow-md">
-              <div class="relative h-52 overflow-hidden">
+            <article class="group overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm transition hover:shadow-md reveal lg:translate-y-2">
+              <div class="relative h-56 overflow-hidden">
                 <img
                   src="https://images.unsplash.com/photo-1502920917128-1aa500764cbd?q=80&w=1200&auto=format&fit=crop"
                   alt="Orthomosaic-style field from above"
@@ -195,7 +209,7 @@
                   2D orthomosaics, 3D photogrammetry, and remote sensing analyses. Accurate, measurable outputs for agriculture, construction, environmental monitoring, and more.
                 </p>
                 <div class="mt-4">
-                  <a href="/portfolio.html#gis" class="inline-flex items-center gap-1 text-blue-700 hover:text-blue-800 link-underline">
+                  <a href="/portfolio-gis.html" class="inline-flex items-center gap-1 text-blue-700 hover:text-blue-800 link-underline">
                     Explore GIS Portfolio
                     <svg class="h-5 w-5 transition-transform group-hover:translate-x-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                       <path d="M9 18l6-6-6-6"></path>

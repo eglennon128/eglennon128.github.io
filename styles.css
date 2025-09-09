@@ -18,6 +18,9 @@ html, body {
   font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
 }
 
+/* Display font utility for hero headings */
+.font-display { font-family: 'Playfair Display', Georgia, 'Times New Roman', serif; }
+
 /* Headings and paragraphs base rhythm */
 h1, h2, h3, h4 { color: #0f172a; /* slate-900 */ }
 p { line-height: 1.65; }
@@ -92,6 +95,27 @@ p { line-height: 1.65; }
 .btn:hover { transform: translateY(-1px); background: #1e3a8a; }
 .btn:active { transform: translateY(0); box-shadow: 0 6px 18px -12px rgba(30, 64, 175, 0.45); }
 
+/* Pulse accent for primary CTA */
+@keyframes pulseRing {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(29, 78, 216, 0.28); }
+  70% { transform: scale(1.01); box-shadow: 0 0 0 12px rgba(29, 78, 216, 0); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(29, 78, 216, 0); }
+}
+.btn-pulse:hover { animation: pulseRing 1.6s ease-out; }
+
+/* Hero visuals */
+.text-shadow { text-shadow: 0 2px 8px rgba(0,0,0,0.35); }
+.hero-video { filter: saturate(1.05) contrast(1.02); }
+
+/* Parallax hint if an image background is used instead of <video> */
+.hero--image {
+  background-size: cover;
+  background-position: center;
+}
+@media (min-width: 1024px) {
+  .hero--image { background-attachment: fixed; }
+}
+
 /* Card hover accent */
 .card {
   transition: transform 220ms ease, box-shadow 260ms ease;
@@ -100,6 +124,53 @@ p { line-height: 1.65; }
   transform: translateY(-2px) scale(1.01);
   box-shadow: 0 18px 36px -20px rgba(0,0,0,0.35);
 }
+
+/* About page: skill cards */
+.skill-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb; /* gray-200 */
+  border-radius: var(--radius);
+  box-shadow: 0 8px 24px -16px rgba(0,0,0,0.25);
+  transition: transform 240ms ease, box-shadow 260ms ease, border-color 200ms ease;
+}
+.skill-card:hover {
+  transform: translateY(-3px) scale(1.01);
+  border-color: #d1d5db; /* gray-300 */
+  box-shadow: 0 18px 42px -22px rgba(0,0,0,0.35);
+}
+.skill-card-inner { padding: 1.25rem; text-align: center; }
+.skill-icon {
+  width: 56px; height: 56px; margin: 0 auto 0.75rem auto;
+  display: grid; place-items: center;
+  color: white;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #1D4ED8 0%, #1E40AF 100%);
+  box-shadow: 0 12px 24px -12px rgba(29, 78, 216, 0.55);
+  transition: transform 220ms ease, box-shadow 240ms ease;
+}
+.skill-card:hover .skill-icon { transform: translateY(-2px) scale(1.04); box-shadow: 0 18px 36px -18px rgba(29, 78, 216, 0.55); }
+.skill-icon i { font-size: 1.25rem; }
+.skill-title { font-weight: 700; font-size: 1.125rem; margin-top: 0.25rem; color: #111827; }
+.skill-desc { color: #4B5563; margin-top: 0.375rem; font-size: 0.95rem; line-height: 1.55; }
+
+/* Contact form controls */
+.form-control {
+  width: 100%;
+  border: 1px solid #e5e7eb; /* gray-200 */
+  border-radius: 0.5rem;
+  background: #fff;
+  padding: 0.625rem 0.75rem;
+  line-height: 1.5;
+  transition: border-color 160ms ease, box-shadow 180ms ease, background 160ms ease;
+}
+.form-control:focus {
+  outline: none;
+  border-color: #1D4ED8; /* blue-700 */
+  box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.18);
+  background: #ffffff;
+}
+.form-control.error { border-color: #dc2626; box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.15); }
+.error-msg { min-height: 1rem; margin-top: 0.25rem; font-size: 0.8125rem; color: #dc2626; }
 
 /* Simple grid helpers if not using Tailwind utilities */
 .auto-grid {
@@ -114,6 +185,22 @@ p { line-height: 1.65; }
 @media (min-width: 768px) { /* md */ }
 @media (min-width: 1024px) { /* lg */ }
 
+/* Scroll reveal for teaser cards */
+.reveal { opacity: 0; transform: translate3d(0, 12px, 0); transition: opacity 480ms ease, transform 520ms ease; }
+.reveal.in-view { opacity: 1; transform: translate3d(0, 0, 0); }
+
+/* Accordions (services page) */
+.accordion-trigger { cursor: pointer; }
+.accordion-icon { transform: rotate(0deg); transition: transform 240ms ease; }
+.accordion-trigger[aria-expanded="true"] .accordion-icon { transform: rotate(180deg); }
+.accordion-panel {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 320ms ease, opacity 240ms ease;
+}
+.accordion-panel.open { opacity: 1; }
+
 /* Footer compact sizing: keep footprint ~10–15% viewport, max ~160–200px */
 /* Compact footer wrapper to reduce vertical bulk while staying responsive */
 .footer-compact { min-height: 12vh; }
@@ -127,4 +214,5 @@ p { line-height: 1.65; }
   - Leverage HTTP caching (Cache-Control, ETag) via your host/CDN. Preload critical assets if needed.
   - Minify CSS/JS for production and purge unused Tailwind classes.
   - If re-introducing a newsletter banner, keep its height ~20vh on mobile and ~16vh on larger screens.
+  - For hero video, provide a compressed H.264 or H.265/HEVC MP4 ~1–4MB and a static poster.
 */
