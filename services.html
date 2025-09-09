@@ -11,6 +11,10 @@
       name="description"
       content="Drone media and GIS mapping services — aerial photography/videography, 2D orthomosaics, 3D photogrammetry, and remote sensing."
     />
+    <meta property="og:title" content="Services | Glennon Aerial Insights" />
+    <meta property="og:description" content="Drone media and GIS mapping services — aerial photography/videography, 2D orthomosaics, 3D photogrammetry, and remote sensing." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" href="./favicon.ico" />
 
     <!-- Fonts & Tailwind (match site) -->
@@ -27,6 +31,7 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body class="font-sans antialiased text-gray-900 bg-white selection:bg-blue-100 selection:text-blue-900 min-h-screen flex flex-col">
+    <a id="skip-link" href="#content">Skip to content</a>
     <header class="relative">
       <!-- Navbar (copied from index.html) -->
       <nav class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-gray-200">
@@ -43,7 +48,7 @@
             <div class="hidden md:flex items-center gap-6 text-sm font-medium">
               <a href="index.html" class="link-underline text-gray-700 hover:text-blue-700">Home</a>
               <a href="about.html" class="link-underline text-gray-700 hover:text-blue-700">About</a>
-              <a href="services.html" class="text-blue-700">Services</a>
+              <a href="services.html" aria-current="page" class="text-blue-700">Services</a>
               <a href="portfolio.html" class="link-underline text-gray-700 hover:text-blue-700">Portfolio</a>
               <a href="contact.html" class="link-underline text-gray-700 hover:text-blue-700">Contact</a>
             </div>
@@ -74,7 +79,7 @@
           <div class="px-4 py-2 space-y-1 text-base">
             <a href="index.html" class="block hover:text-blue-700 py-2">Home</a>
             <a href="about.html" class="block hover:text-blue-700 py-2">About</a>
-            <a href="services.html" class="block text-blue-700 py-2">Services</a>
+            <a href="services.html" aria-current="page" class="block text-blue-700 py-2">Services</a>
             <a href="portfolio.html" class="block hover:text-blue-700 py-2">Portfolio</a>
             <a href="contact.html" class="block hover:text-blue-700 py-2">Contact</a>
           </div>
@@ -96,7 +101,7 @@
 
           <div class="relative z-10 flex items-center justify-center text-center px-6 page-hero-inner">
             <div class="max-w-3xl mx-auto text-white">
-              <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-shadow fade-in-up">Our Services</h2>
+              <h1 class="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight fade-in-up">Our Services</h1>
               <p class="mt-3 text-base sm:text-lg md:text-xl text-white/90 fade-in-up [animation-delay:160ms]">Tailored drone and GIS solutions for your needs.</p>
             </div>
           </div>
@@ -111,7 +116,7 @@
       </section>
     </header>
 
-    <main class="flex-1 pb-14 md:pb-16">
+    <main id="content" class="flex-1 pb-4">
       <section class="pt-4 sm:pt-6 pb-10 sm:pb-14">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <!-- Accordions Container -->
