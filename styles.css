@@ -219,16 +219,15 @@ p { line-height: 1.65; }
 }
 .accordion-panel.open { opacity: 1; }
 
-/* Footer compact sizing: keep footprint ~8–12% viewport, max ~140–180px */
-/* Compact footer wrapper to reduce vertical bulk while staying responsive */
-.footer-compact { min-height: 10vh; }
-@media (min-width: 768px) { .footer-compact { min-height: 9vh; } }
-@media (min-width: 1024px) { .footer-compact { min-height: 140px; } }
+/* Footer compact sizing: reduce footprint slightly */
+.footer-compact { min-height: 9vh; }
+@media (min-width: 768px) { .footer-compact { min-height: 8vh; } }
+@media (min-width: 1024px) { .footer-compact { min-height: 120px; } }
 
 /* Footer: tighter vertical rhythm and slightly smaller icon size */
-.footer-compact .footer-upper { padding-block: 12px; gap: 0.75rem; }
-@media (min-width: 640px) { .footer-compact .footer-upper { padding-block: 14px; } }
-.footer-compact .footer-lower { padding-block: 8px; }
+.footer-compact .footer-upper { padding-block: 10px; gap: 0.6rem; }
+@media (min-width: 640px) { .footer-compact .footer-upper { padding-block: 12px; } }
+.footer-compact .footer-lower { padding-block: 6px; }
 .footer-compact svg { width: 18px; height: 18px; }
 /* Ensure social links meet 40px tap target while visually compact */
 #site-footer a[aria-label] {
@@ -247,11 +246,11 @@ p { line-height: 1.65; }
 #site-footer svg { display: inline-block; opacity: 1; visibility: visible; }
 
 /* Shared hero stripe height for pages (About/Services/Portfolio/Contact) */
-.page-hero { min-height: clamp(320px, 46vh, 520px); }
-.page-hero-inner { min-height: clamp(320px, 46vh, 520px); }
+.page-hero { min-height: clamp(320px, 44vh, 500px); }
+.page-hero-inner { min-height: clamp(320px, 44vh, 500px); }
 
 /* Home hero: larger, cohesive sizing */
-.home-hero { min-height: clamp(420px, 72vh, 720px); }
+.home-hero { min-height: clamp(400px, 66vh, 680px); }
 
 /* Hero badge: larger GAI square centered above H1 */
 .hero-badge { position: relative; z-index: 2; display: grid; place-items: center; margin-bottom: 0.75rem; transform: translateY(-6px); }
@@ -270,6 +269,15 @@ p { line-height: 1.65; }
 /* Tighten gap below page heroes */
 header .page-hero + .divider, header .page-hero + .wave-divider { margin-top: -1px; }
 header + main { padding-top: 8px; }
+
+/* Density/whitespace tuning: opt-in via body.layout-tight */
+.layout-tight .page-hero { min-height: clamp(300px, 42vh, 480px); }
+.layout-tight .page-hero-inner { min-height: clamp(300px, 42vh, 480px); }
+.layout-tight .home-hero { min-height: clamp(380px, 64vh, 640px); }
+.layout-tight main > section { padding-top: clamp(12px, 2.2vw, 22px) !important; padding-bottom: clamp(22px, 3.6vw, 40px) !important; }
+.layout-tight main .grid { gap: clamp(0.9rem, 2.2vw, 1.25rem) !important; }
+/* Soften common Tailwind vertical spacing utilities */
+.layout-tight .space-y-6 > :not([hidden]) ~ :not([hidden]) { margin-top: 1rem !important; }
 
 /*
   Performance notes:

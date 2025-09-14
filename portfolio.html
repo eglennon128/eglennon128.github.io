@@ -27,7 +27,7 @@
     <!-- Site CSS -->
     <link rel="stylesheet" href="./styles.css" />
   </head>
-  <body class="font-sans antialiased text-gray-900 bg-white selection:bg-blue-100 selection:text-blue-900 min-h-screen flex flex-col">
+  <body class="font-sans antialiased text-gray-900 bg-white selection:bg-blue-100 selection:text-blue-900 min-h-screen flex flex-col layout-tight">
     <a id="skip-link" href="#content">Skip to content</a>
     <!-- Navbar (copied from index.html for consistency) -->
     <header class="relative">
@@ -274,9 +274,24 @@
           <div class="sm:text-right sm:ml-auto">
             <h4 class="text-sm font-semibold text-white">Connect</h4>
             <ul class="mt-2 flex flex-wrap gap-4 items-center justify-start sm:justify-end text-sm">
-              <li><a href="#" class="inline-flex items-center gap-2 hover:text-white" aria-label="LinkedIn">LinkedIn</a></li>
-              <li><a href="#" class="inline-flex items-center gap-2 hover:text-white" aria-label="Instagram">Instagram</a></li>
-              <li><a href="#" class="inline-flex items-center gap-2 hover:text-white" aria-label="YouTube">YouTube</a></li>
+              <li>
+                <a href="#" class="inline-flex items-center gap-2 hover:text-white" aria-label="LinkedIn">
+                  <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5v16H0zM8 8h4.8v2.2h.1c.7-1.2 2.4-2.5 4.9-2.5 5.2 0 6.2 3.4 6.2 7.9V24h-5v-7.1c0-1.7 0-3.9-2.4-3.9s-2.8 1.9-2.8 3.8V24H8z"/></svg>
+                  LinkedIn
+                </a>
+              </li>
+              <li>
+                <a href="#" class="inline-flex items-center gap-2 hover:text-white" aria-label="Instagram">
+                  <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 2C4.239 2 2 4.239 2 7v10c0 2.761 2.239 5 5 5h10c2.761 0 5-2.239 5-5V7c0-2.761-2.239-5-5-5H7zm10 2a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3h10zm-5 3.5A5.5 5.5 0 1 0 17.5 13 5.506 5.506 0 0 0 12 7.5zm0 2A3.5 3.5 0 1 1 8.5 13 3.5 3.5 0 0 1 12 9.5zm5.75-3.25a1.25 1.25 0 1 0 1.25 1.25 1.25 1.25 0 0 0-1.25-1.25z"/></svg>
+                  Instagram
+                </a>
+              </li>
+              <li>
+                <a href="#" class="inline-flex items-center gap-2 hover:text-white" aria-label="YouTube">
+                  <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.6 3.6 12 3.6 12 3.6s-7.6 0-9.4.5A3 3 0 0 0 .5 6.2 31.2 31.2 0 0 0 0 12a31.2 31.2 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.8.5 9.4.5 9.4.5s7.6 0 9.4-.5a3 3 0 0 0 2.1-2.1A31.2 31.2 0 0 0 24 12a31.2 31.2 0 0 0-.5-5.8zM9.75 15.5v-7l6 3.5-6 3.5z"/></svg>
+                  YouTube
+                </a>
+              </li>
             </ul>
           </div>
         </div>
