@@ -12,7 +12,7 @@
     <meta property="og:description" content="Explore drone media and GIS mapping projects: aerial photography, videography, 2D orthomosaics, 3D photogrammetry, and remote sensing." />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
-    <link rel="icon" href="./favicon.ico" />
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
 
     <!-- Fonts (match index.html) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body class="font-sans antialiased text-gray-900 bg-white selection:bg-blue-100 selection:text-blue-900 min-h-screen flex flex-col">
+    <a id="skip-link" href="#content">Skip to content</a>
     <!-- Navbar (copied from index.html for consistency) -->
     <header class="relative">
       <nav class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-gray-200">
@@ -47,7 +48,7 @@
               <a href="index.html" class="link-underline text-gray-700 hover:text-blue-700">Home</a>
               <a href="about.html" class="link-underline text-gray-700 hover:text-blue-700">About</a>
               <a href="services.html" class="link-underline text-gray-700 hover:text-blue-700">Services</a>
-              <a href="portfolio.html" class="link-underline text-blue-800">Portfolio</a>
+              <a href="portfolio.html" aria-current="page" class="text-blue-700">Portfolio</a>
               <a href="contact.html" class="link-underline text-gray-700 hover:text-blue-700">Contact</a>
             </div>
 
@@ -80,7 +81,7 @@
             <a href="index.html" class="block hover:text-blue-700 py-2">Home</a>
             <a href="about.html" class="block hover:text-blue-700 py-2">About</a>
             <a href="services.html" class="block hover:text-blue-700 py-2">Services</a>
-            <a href="portfolio.html" class="block text-blue-800 py-2">Portfolio</a>
+            <a href="portfolio.html" aria-current="page" class="block text-blue-700 py-2">Portfolio</a>
             <a href="contact.html" class="block hover:text-blue-700 py-2">Contact</a>
           </div>
         </div>
@@ -258,7 +259,7 @@
     </main>
 
     <!-- Footer (copied/trimmed to stay consistent) -->
-    <footer id="site-footer" class="bg-gray-800 text-gray-300 md:fixed md:bottom-0 md:left-0 md:right-0 z-30 footer-compact">
+    <footer id="site-footer" class="bg-gray-800 text-gray-300 footer-compact">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="footer-upper grid grid-cols-1 sm:grid-cols-2 gap-6 items-start">
           <div>

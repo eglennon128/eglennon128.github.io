@@ -18,7 +18,7 @@
     <meta property="og:description" content="Drone photography, videography, and GIS mapping services. Aerial media for real estate and events, plus 2D orthomosaics, 3D photogrammetry, and remote sensing." />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
-    <link rel="icon" href="./favicon.ico" />
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
 
     <!-- Inter font (lightweight) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -63,7 +63,7 @@
 
             <!-- Desktop Links -->
             <div class="hidden md:flex items-center gap-6 text-sm font-medium">
-              <a href="index.html" aria-current="page" class="link-underline text-blue-700">Home</a>
+              <a href="index.html" aria-current="page" class="text-blue-700">Home</a>
               <a href="about.html" class="link-underline text-gray-700 hover:text-blue-700">About</a>
               <a href="services.html" class="link-underline text-gray-700 hover:text-blue-700">Services</a>
               <a href="portfolio.html" class="link-underline text-gray-700 hover:text-blue-700">Portfolio</a>
@@ -235,34 +235,51 @@
       </section>
     </main>
 
-    <footer id="site-footer" class="bg-gray-800 text-gray-300 border-t border-gray-700 footer-compact">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 site-footer-inner">
-        <div class="footer-bar">
-          <div class="footer-brand">
+    <footer id="site-footer" class="bg-gray-800 text-gray-300 footer-compact">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="footer-upper grid grid-cols-1 sm:grid-cols-2 gap-6 items-start">
+          <div>
             <a href="index.html" class="inline-flex items-center gap-2 text-white">
-              <span class="logo-square" aria-hidden="true">G</span>
+              <span class="inline-flex h-9 w-9 items-center justify-center rounded-md bg-blue-600 text-white" aria-hidden="true">G</span>
               <span class="font-semibold">Glennon Aerial Insights</span>
             </a>
+            <p class="mt-2 text-sm text-gray-400 max-w-sm">
+              Aerial photography/videography and GIS mapping for real estate, agriculture, infrastructure, and environmental applications.
+            </p>
           </div>
-          <p class="footer-desc">Aerial photography/videography and GIS mapping for real estate, agriculture, infrastructure, and environmental applications.</p>
-          <div class="footer-right">
-            <span class="footer-connect">Connect</span>
-            <ul class="footer-socials">
-              <li><a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5v16H0zM8 8h4.8v2.2h.1c.7-1.2 2.4-2.5 4.9-2.5 5.2 0 6.2 3.4 6.2 7.9V24h-5v-7.1c0-1.7 0-3.9-2.4-3.9s-2.8 1.9-2.8 3.8V24H8z"/></svg></a></li>
-              <li><a href="https://instagram.com/yourusername" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 2C4.239 2 2 4.239 2 7v10c0 2.761 2.239 5 5 5h10c2.761 0 5-2.239 5-5V7c0-2.761-2.239-5-5-5H7zm10 2a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3h10zm-5 3.5A5.5 5.5 0 1 0 17.5 13 5.506 5.506 0 0 0 12 7.5zm0 2A3.5 3.5 0 1 1 8.5 13 3.5 3.5 0 0 1 12 9.5zm5.75-3.25a1.25 1.25 0 1 0 1.25 1.25 1.25 1.25 0 0 0-1.25-1.25z"/></svg></a></li>
-              <li><a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.6 3.6 12 3.6 12 3.6s-7.6 0-9.4.5A3 3 0 0 0 .5 6.2 31.2 31.2 0 0 0 0 12a31.2 31.2 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.8.5 9.4.5 9.4.5s7.6 0 9.4-.5a3 3 0 0 0 2.1-2.1A31.2 31.2 0 0 0 24 12a31.2 31.2 0 0 0-.5-5.8zM9.75 15.5v-7l6 3.5-6 3.5z"/></svg></a></li>
+          <div class="sm:text-right sm:ml-auto">
+            <h4 class="text-sm font-semibold text-white">Connect</h4>
+            <ul class="mt-2 flex flex-wrap gap-4 items-center justify-start sm:justify-end text-sm">
+              <li>
+                <a href="#" class="inline-flex items-center gap-2 hover:text-white" aria-label="LinkedIn">
+                  <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5v16H0zM8 8h4.8v2.2h.1c.7-1.2 2.4-2.5 4.9-2.5 5.2 0 6.2 3.4 6.2 7.9V24h-5v-7.1c0-1.7 0-3.9-2.4-3.9s-2.8 1.9-2.8 3.8V24H8z" /></svg>
+                  LinkedIn
+                </a>
+              </li>
+              <li>
+                <a href="https://instagram.com/yourusername" class="inline-flex items-center gap-2 hover:text-white" aria-label="Instagram">
+                  <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 2C4.239 2 2 4.239 2 7v10c0 2.761 2.239 5 5 5h10c2.761 0 5-2.239 5-5V7c0-2.761-2.239-5-5-5H7zm10 2a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3h10zm-5 3.5A5.5 5.5 0 1 0 17.5 13 5.506 5.506 0 0 0 12 7.5zm0 2A3.5 3.5 0 1 1 8.5 13 3.5 3.5 0 0 1 12 9.5zm5.75-3.25a1.25 1.25 0 1 0 1.25 1.25 1.25 1.25 0 0 0-1.25-1.25z"/></svg>
+                  Instagram
+                </a>
+              </li>
+              <li>
+                <a href="#" class="inline-flex items-center gap-2 hover:text-white" aria-label="YouTube">
+                  <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.6 3.6 12 3.6 12 3.6s-7.6 0-9.4.5A3 3 0 0 0 .5 6.2 31.2 31.2 0 0 0 0 12a31.2 31.2 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.8.5 9.4.5 9.4.5s7.6 0 9.4-.5a3 3 0 0 0 2.1-2.1A31.2 31.2 0 0 0 24 12a31.2 31.2 0 0 0-.5-5.8zM9.75 15.5v-7l6 3.5-6 3.5z"/></svg>
+                  YouTube
+                </a>
+              </li>
             </ul>
-            <span class="footer-inline">
-              <a href="mailto:hello@example.com">hello@example.com</a>
-              <span class="text-gray-600">·</span>
-              <a href="contact.html" class="link-underline">Schedule a consultation</a>
-            </span>
           </div>
-          <div class="footer-legal">
-            <span>© 2025 Ethan Glennon</span>
-            <span class="text-gray-600 hidden sm:inline">·</span>
-            <a href="mailto:hello@example.com" class="email-link">hello@example.com</a>
-          </div>
+        </div>
+
+        <div class="border-t border-gray-700"></div>
+        <div class="footer-lower py-3 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-400">
+          <p>© 2025 Ethan Glennon</p>
+          <p>
+            <a href="mailto:hello@example.com" class="hover:text-white">hello@example.com</a>
+            <span class="mx-2">·</span>
+            <a href="contact.html" class="link-underline hover:text-white">Schedule a consultation</a>
+          </p>
         </div>
       </div>
     </footer>
