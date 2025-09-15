@@ -246,9 +246,10 @@ p { line-height: 1.65; }
 #site-footer a:hover { color: #ffffff; }
 #site-footer svg { display: inline-block; opacity: 1; visibility: visible; }
 
-/* Shared hero stripe height for pages (About/Services/Portfolio/Contact) */
-.page-hero { min-height: clamp(320px, 44vh, 500px); }
-.page-hero-inner { min-height: clamp(320px, 44vh, 500px); }
+/* Shared hero stripe height for pages (About/Services/Portfolio/Contact)
+   Slightly increased for better visual impact */
+.page-hero { min-height: clamp(360px, 50vh, 560px); }
+.page-hero-inner { min-height: clamp(360px, 50vh, 560px); }
 
 /* Home hero: larger, cohesive sizing */
 .home-hero { min-height: clamp(400px, 66vh, 680px); }
@@ -269,11 +270,15 @@ p { line-height: 1.65; }
 
 /* Tighten gap below page heroes */
 header .page-hero + .divider, header .page-hero + .wave-divider { margin-top: -1px; }
+/* Keep default spacing for home, but reduce on inner pages with page heroes */
 header + main { padding-top: 8px; }
+header:has(.page-hero) + main { padding-top: 0; }
+/* Also nudge the very first section up slightly when a page hero is present */
+header:has(.page-hero) + main > section:first-of-type { padding-top: clamp(8px, 1.4vw, 18px) !important; }
 
 /* Density/whitespace tuning: opt-in via body.layout-tight */
-.layout-tight .page-hero { min-height: clamp(300px, 42vh, 480px); }
-.layout-tight .page-hero-inner { min-height: clamp(300px, 42vh, 480px); }
+.layout-tight .page-hero { min-height: clamp(340px, 48vh, 540px); }
+.layout-tight .page-hero-inner { min-height: clamp(340px, 48vh, 540px); }
 .layout-tight .home-hero { min-height: clamp(380px, 64vh, 640px); }
 .layout-tight main > section { padding-top: clamp(12px, 2.2vw, 22px) !important; padding-bottom: clamp(22px, 3.6vw, 40px) !important; }
 .layout-tight main .grid { gap: clamp(0.9rem, 2.2vw, 1.25rem) !important; }
