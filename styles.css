@@ -270,11 +270,8 @@ p { line-height: 1.65; }
 
 /* Tighten gap below page heroes */
 header .page-hero + .divider, header .page-hero + .wave-divider { margin-top: -1px; }
-/* Keep default spacing for home, but reduce on inner pages with page heroes */
+/* Preserve original spacing below header across all pages */
 header + main { padding-top: 8px; }
-header:has(.page-hero) + main { padding-top: 0; }
-/* Also nudge the very first section up slightly when a page hero is present */
-header:has(.page-hero) + main > section:first-of-type { padding-top: clamp(8px, 1.4vw, 18px) !important; }
 
 /* Density/whitespace tuning: opt-in via body.layout-tight */
 .layout-tight .page-hero { min-height: clamp(340px, 48vh, 540px); }
