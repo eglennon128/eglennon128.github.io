@@ -12,20 +12,18 @@
     <meta property="og:description" content="Drone photography and videography projects for real estate, events, inspections, and marketing. High-res aerial media from Glennon Aerial Insights." />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#1E40AF" />
+    <link rel="canonical" href="https://glennonaerial.com/portfolio-drone.html" />
+    <meta property="og:image" content="https://glennonaerial.com/assets/images/social-share.jpg" />
+    <meta name="twitter:image" content="https://glennonaerial.com/assets/images/social-share.jpg" />
     <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
 
-    <!-- Fonts (match global) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet" />
+    <link rel="preload" href="assets/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="assets/fonts/Montserrat-700.woff2" as="font" type="font/woff2" crossorigin />
 
-    <!-- Tailwind CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/site.css" />
 
-    <!-- Site styles -->
-    <link rel="stylesheet" href="./styles.css" />
+    <script defer data-domain="glennonaerial.com" src="https://plausible.io/js/script.js"></script>
   </head>
   <body class="font-sans antialiased text-gray-900 bg-white selection:bg-blue-100 selection:text-blue-900 min-h-screen flex flex-col layout-tight">
     <a id="skip-link" href="#content">Skip to content</a>
@@ -108,7 +106,8 @@
       <!-- Masonry/Responsive grid -->
       <section class="pb-6 sm:pb-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div id="droneGrid" class="masonry" data-stagger data-stagger-step="70">
+          <div id="drone-portfolio">
+            <div id="droneGrid" class="masonry" data-stagger data-stagger-step="70" data-dynamic-list>
             <!-- Project 1: Real Estate (multiple images) -->
             <article class="masonry-item media-card reveal" data-type="real-estate">
               <a href="#" class="media-thumb" data-lightbox data-title="Luxury Real Estate Shoot" data-desc="High-res aerial photos and cinematic fly-through for property listing." data-gallery="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1600&auto=format&fit=crop|https://images.unsplash.com/photo-1479839672679-a46483c0e7c8?q=80&w=1600&auto=format&fit=crop">
@@ -173,6 +172,7 @@
                 <a class="media-cta" href="contact.html?service=drone-media">Book a walkthrough →</a>
               </div>
             </article>
+            </div>
           </div>
 
           <!-- Bottom CTA -->
@@ -186,7 +186,7 @@
     <!-- Lightbox Modal (page-scoped) -->
     <div id="lightbox" class="lightbox" hidden aria-hidden="true" aria-modal="true" role="dialog">
       <div class="lightbox-backdrop" data-close></div>
-      <div class="lightbox-dialog" role="document" aria-label="Media viewer">
+      <div class="lightbox-dialog" role="document" aria-label="Media viewer" tabindex="-1">
         <button class="lightbox-close" type="button" aria-label="Close" data-close>&times;</button>
         <button class="lightbox-nav prev" type="button" aria-label="Previous" data-prev>❮</button>
         <button class="lightbox-nav next" type="button" aria-label="Next" data-next>❯</button>
@@ -212,9 +212,15 @@
           <div class="sm:text-right sm:ml-auto">
             <h4 class="text-sm font-semibold text-white">Connect</h4>
             <ul class="mt-2 flex flex-wrap gap-4 items-center justify-start sm:justify-end text-sm">
-              <li><a href="#" class="inline-flex items-center gap-2 hover:text-white" aria-label="LinkedIn">LinkedIn</a></li>
-              <li><a href="#" class="inline-flex items-center gap-2 hover:text-white" aria-label="Instagram">Instagram</a></li>
-              <li><a href="#" class="inline-flex items-center gap-2 hover:text-white" aria-label="YouTube">YouTube</a></li>
+              <li>
+                <a href="https://www.linkedin.com/in/ethanglennon" class="inline-flex items-center gap-2 hover:text-white" aria-label="LinkedIn" rel="noopener noreferrer" target="_blank">LinkedIn</a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/glennonaerial" class="inline-flex items-center gap-2 hover:text-white" aria-label="Instagram" rel="noopener noreferrer" target="_blank">Instagram</a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/@glennonaerial" class="inline-flex items-center gap-2 hover:text-white" aria-label="YouTube" rel="noopener noreferrer" target="_blank">YouTube</a>
+              </li>
             </ul>
           </div>
         </div>
@@ -222,7 +228,7 @@
         <div class="py-3 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-400">
           <p>© 2025 Ethan Glennon</p>
           <p>
-            <a href="mailto:hello@example.com" class="hover:text-white">hello@example.com</a>
+            <a href="mailto:hello@glennonaerial.com" class="hover:text-white">hello@glennonaerial.com</a>
             <span class="mx-2">·</span>
             <a href="contact.html" class="link-underline hover:text-white">Schedule a consultation</a>
           </p>
@@ -231,7 +237,7 @@
     </footer>
 
     <!-- App JS -->
-    <script src="./script.js" defer></script>
+    <script src="assets/js/site.js" defer></script>
     <!--
       Testing Guide:
       - Lighthouse mobile run: verify images are lazily loaded, ensure tap targets are sized.

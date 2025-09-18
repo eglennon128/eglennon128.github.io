@@ -1,0 +1,50 @@
+[
+  {
+    "id": "luxury-listing",
+    "type": "real-estate",
+    "title": "Luxury Listing Highlights",
+    "description": "Cinematic fly-through and HDR stills for a waterfront home.",
+    "image": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1200&auto=format&fit=crop&fm=webp",
+    "alt": "Modern home from above",
+    "cta": {
+      "href": "contact.html?service=drone-media",
+      "label": "Book a project"
+    }
+  },
+  {
+    "id": "outdoor-festival",
+    "type": "events",
+    "title": "Outdoor Festival Recap",
+    "description": "Dynamic aerials capturing crowd energy and venue scale.",
+    "image": "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1200&auto=format&fit=crop&fm=webp",
+    "alt": "Outdoor event aerial shot",
+    "cta": {
+      "href": "contact.html?service=drone-media",
+      "label": "Plan your event coverage"
+    }
+  },
+  {
+    "id": "coastal-resort",
+    "type": "marketing",
+    "title": "Coastal Resort Promo",
+    "description": "Sunrise hero shots for social and website banners.",
+    "image": "https://images.unsplash.com/photo-1482446439383-6c89f3cd948b?q=80&w=1200&auto=format&fit=crop&fm=webp",
+    "alt": "Coastal marketing drone shot",
+    "cta": {
+      "href": "contact.html?service=drone-media",
+      "label": "Launch a campaign"
+    }
+  },
+  {
+    "id": "solar-array",
+    "type": "inspections",
+    "title": "Solar Array Inspection",
+    "description": "High-resolution imagery for maintenance and reporting.",
+    "image": "https://images.unsplash.com/photo-1527772835181-54d6d5858e91?q=80&w=1200&auto=format&fit=crop&fm=webp",
+    "alt": "Solar panel inspection",
+    "cta": {
+      "href": "contact.html?service=drone-media",
+      "label": "Schedule an inspection"
+    }
+  }
+]

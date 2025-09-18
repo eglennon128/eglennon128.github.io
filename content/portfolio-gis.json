@@ -1,0 +1,26 @@
+[
+  {
+    "id": "farm-orthomosaic",
+    "type": "agriculture",
+    "title": "Farm Orthomosaic",
+    "description": "High-accuracy stitched map for crop health and planning.",
+    "image": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=1200&auto=format&fit=crop&fm=webp",
+    "alt": "Field orthomosaic"
+  },
+  {
+    "id": "construction-progress",
+    "type": "construction",
+    "title": "Site Progress Mapping",
+    "description": "2D/3D capture for volumetrics and progress reporting.",
+    "image": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1200&auto=format&fit=crop&fm=webp",
+    "alt": "Construction site mapping"
+  },
+  {
+    "id": "coastal-erosion",
+    "type": "environmental",
+    "title": "Coastal Erosion Study",
+    "description": "Change detection and shoreline monitoring outputs.",
+    "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop&fm=webp",
+    "alt": "Coastal erosion study"
+  }
+]

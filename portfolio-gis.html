@@ -12,24 +12,23 @@
     <meta property="og:description" content="GIS mapping projects: 2D orthomosaics, 3D photogrammetry, and remote sensing overlays for agriculture, construction, and environmental work." />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#1E40AF" />
+    <link rel="canonical" href="https://glennonaerial.com/portfolio-gis.html" />
+    <meta property="og:image" content="https://glennonaerial.com/assets/images/social-share.jpg" />
+    <meta name="twitter:image" content="https://glennonaerial.com/assets/images/social-share.jpg" />
     <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
 
-    <!-- Fonts (match global) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet" />
-
-    <!-- Tailwind CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet" />
+    <link rel="preload" href="assets/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="assets/fonts/Montserrat-700.woff2" as="font" type="font/woff2" crossorigin />
 
     <!-- Leaflet CSS/JS (CDN). Replace with pinned versions and self-host in production. -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
     <!-- Site styles -->
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="assets/css/site.css" />
+
+    <script defer data-domain="glennonaerial.com" src="https://plausible.io/js/script.js"></script>
   </head>
   <body class="font-sans antialiased text-gray-900 bg-white selection:bg-blue-100 selection:text-blue-900 min-h-screen flex flex-col layout-tight">
     <a id="skip-link" href="#content">Skip to content</a>
@@ -111,7 +110,7 @@
       <!-- GIS Projects Grid -->
       <section class="py-8 sm:py-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5" data-stagger data-stagger-step="70">
+          <div id="gis-portfolio" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5" data-stagger data-stagger-step="70" data-dynamic-list>
             <!-- Project 1: 2D Orthomosaic -->
             <article class="map-card reveal" data-type="agriculture">
               <div class="map-head">
@@ -182,9 +181,15 @@
           <div class="sm:text-right sm:ml-auto">
             <h4 class="text-sm font-semibold text-white">Connect</h4>
             <ul class="mt-2 flex flex-wrap gap-4 items-center justify-start sm:justify-end text-sm">
-              <li><a href="#" class="inline-flex items-center gap-2 hover:text-white" aria-label="LinkedIn">LinkedIn</a></li>
-              <li><a href="#" class="inline-flex items-center gap-2 hover:text-white" aria-label="Instagram">Instagram</a></li>
-              <li><a href="#" class="inline-flex items-center gap-2 hover:text-white" aria-label="YouTube">YouTube</a></li>
+              <li>
+                <a href="https://www.linkedin.com/in/ethanglennon" class="inline-flex items-center gap-2 hover:text-white" aria-label="LinkedIn" rel="noopener noreferrer" target="_blank">LinkedIn</a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/glennonaerial" class="inline-flex items-center gap-2 hover:text-white" aria-label="Instagram" rel="noopener noreferrer" target="_blank">Instagram</a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/@glennonaerial" class="inline-flex items-center gap-2 hover:text-white" aria-label="YouTube" rel="noopener noreferrer" target="_blank">YouTube</a>
+              </li>
             </ul>
           </div>
         </div>
@@ -192,7 +197,7 @@
         <div class="py-3 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-400">
           <p>© 2025 Ethan Glennon</p>
           <p>
-            <a href="mailto:hello@example.com" class="hover:text-white">hello@example.com</a>
+            <a href="mailto:hello@glennonaerial.com" class="hover:text-white">hello@glennonaerial.com</a>
             <span class="mx-2">·</span>
             <a href="contact.html" class="link-underline hover:text-white">Schedule a consultation</a>
           </p>
@@ -201,7 +206,8 @@
     </footer>
 
     <!-- App JS -->
-    <script src="./script.js" defer></script>
+    <script src="assets/js/site.js" defer></script>
+    <script src="assets/js/gis.js" defer></script>
     <!-- CesiumJS placeholder (loads when online). Provide your Ion token if using Cesium assets. -->
     <!-- Note: For production, pin exact versions and self-host when possible. -->
     <link rel="stylesheet" href="https://cesium.com/downloads/cesiumjs/releases/1.110/Build/Cesium/Widgets/widgets.css" />
