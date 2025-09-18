@@ -113,9 +113,8 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div id="portfolioTabs" class="js-tabs">
             <div class="tabs-list" role="tablist" aria-label="Portfolio Categories">
-              <!-- Each tab is also a link to a dedicated page for SEO and fallback -->
-              <a href="portfolio-drone.html" role="tab" aria-selected="true" aria-controls="tab-drone" id="tab-drone-tab" data-tab-target="tab-drone" class="tab-btn is-active">Drone Media</a>
-              <a href="portfolio-gis.html" role="tab" aria-selected="false" aria-controls="tab-gis" id="tab-gis-tab" data-tab-target="tab-gis" class="tab-btn">GIS Mapping</a>
+              <a href="#drone" role="tab" aria-selected="true" aria-controls="tab-drone" id="tab-drone-tab" data-tab-target="tab-drone" class="tab-btn is-active">Drone Media</a>
+              <a href="#gis" role="tab" aria-selected="false" aria-controls="tab-gis" id="tab-gis-tab" data-tab-target="tab-gis" class="tab-btn">GIS Mapping</a>
             </div>
           </div>
         </div>
@@ -125,6 +124,7 @@
       <section class="py-10 sm:py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <!-- Drone Media Panel -->
+          <span id="drone" class="anchor-offset" aria-hidden="true"></span>
           <div id="tab-drone" role="tabpanel" aria-labelledby="tab-drone-tab" data-tab-panel class="tab-panel is-active">
             <div class="max-w-3xl">
               <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight">Drone Media</h2>
@@ -195,6 +195,7 @@
           </div>
 
           <!-- GIS Mapping Panel -->
+          <span id="gis" class="anchor-offset" aria-hidden="true"></span>
           <div id="tab-gis" role="tabpanel" aria-labelledby="tab-gis-tab" data-tab-panel class="tab-panel">
             <div class="max-w-3xl">
               <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight">GIS Mapping</h2>

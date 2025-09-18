@@ -436,3 +436,13 @@ header:has(.page-hero) + main > section:first-of-type { padding-top: clamp(0px, 
   .fade-in-up, .reveal, .animate-fade { animation: none !important; transition: none !important; opacity: 1 !important; transform: none !important; }
   .btn-pulse:hover { animation: none !important; }
 }
+
+.anchor-offset {
+  display: block;
+  position: relative;
+  top: -96px;
+  height: 0;
+}
+@media (min-width: 768px) {
+  .anchor-offset { top: -118px; }
+}

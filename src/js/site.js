@@ -257,16 +257,31 @@ import { initDynamicPortfolio } from './modules/data-loader.js';
   if (tabsRoot) {
     const tabButtons = Array.from(document.querySelectorAll('.tab-btn'));
     const panels = Array.from(document.querySelectorAll('[data-tab-panel]'));
+    const slugToTab = { drone: 'tab-drone', gis: 'tab-gis' };
+    const tabToSlug = Object.fromEntries(Object.entries(slugToTab).map(([slug, id]) => [id, slug]));
+    let suppressHashUpdate = false;
 
-    function activateTab(targetId) {
-      // Deactivate all
+    function updateHash(targetId) {
+      const slug = tabToSlug[targetId];
+      if (!slug) return;
+      const newHash = `#${slug}`;
+      if (window.location.hash === newHash) return;
+      suppressHashUpdate = true;
+      history.replaceState(null, '', newHash);
+      window.requestAnimationFrame(() => {
+        suppressHashUpdate = false;
+      });
+    }
+
+    function activateTab(targetId, options = {}) {
+      const { skipHashUpdate = false } = options;
+
       tabButtons.forEach((btn) => {
         btn.classList.remove('is-active');
         btn.setAttribute('aria-selected', 'false');
       });
       panels.forEach((p) => p.classList.remove('is-active'));
 
-      // Activate target
       const btn = tabButtons.find((b) => b.getAttribute('data-tab-target') === targetId);
       const panel = document.getElementById(targetId);
       if (btn) {
@@ -276,9 +291,26 @@ import { initDynamicPortfolio } from './modules/data-loader.js';
       if (panel) {
         panel.classList.add('is-active');
       }
+
+      if (!skipHashUpdate) {
+        updateHash(targetId);
+      }
     }
 
-    // Intercept clicks when a matching panel exists (single-page mode)
+    function activateFromHash({ scroll = true } = {}) {
+      const slug = window.location.hash.replace('#', '').toLowerCase();
+      const targetId = slugToTab[slug];
+      if (!targetId) return false;
+      activateTab(targetId, { skipHashUpdate: true });
+      if (scroll) {
+        const anchor = document.getElementById(slug);
+        if (anchor) {
+          anchor.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+      return true;
+    }
+
     tabButtons.forEach((btn) => {
       btn.addEventListener('click', (e) => {
         const targetId = btn.getAttribute('data-tab-target');
@@ -288,17 +320,22 @@ import { initDynamicPortfolio } from './modules/data-loader.js';
           e.preventDefault();
           activateTab(targetId);
         }
-        // else allow navigation to sub-page e.g., /portfolio-drone.html
       });
     });
 
-    // Initialize default active if any button has is-active
-    const initiallyActive = tabButtons.find((b) => b.classList.contains('is-active'));
-    if (initiallyActive) {
-      activateTab(initiallyActive.getAttribute('data-tab-target'));
+    const handledHashOnLoad = activateFromHash({ scroll: false });
+    if (!handledHashOnLoad) {
+      const initiallyActive = tabButtons.find((b) => b.classList.contains('is-active'));
+      if (initiallyActive) {
+        activateTab(initiallyActive.getAttribute('data-tab-target'), { skipHashUpdate: true });
+      }
     }
 
-    // Filters per panel
+    window.addEventListener('hashchange', () => {
+      if (suppressHashUpdate) return;
+      activateFromHash();
+    });
+
     function bindFilter(selectId, panelId) {
       const select = document.getElementById(selectId);
       const panel = document.getElementById(panelId);
@@ -310,25 +347,21 @@ import { initDynamicPortfolio } from './modules/data-loader.js';
           const type = (card.getAttribute('data-type') || '').toLowerCase();
           const show = v === 'all' || v === type;
           if (show) {
-            // Ensure participates in layout, then fade in
             card.style.display = '';
             requestAnimationFrame(() => {
               card.classList.remove('hidden-by-filter');
               card.removeAttribute('aria-hidden');
             });
-          } else {
-            // Fade out, then remove from layout when transition ends
-            if (!card.classList.contains('hidden-by-filter')) {
-              card.classList.add('hidden-by-filter');
-              const onEnd = (e) => {
-                if (e.propertyName === 'opacity') {
-                  card.style.display = 'none';
-                  card.setAttribute('aria-hidden', 'true');
-                  card.removeEventListener('transitionend', onEnd);
-                }
-              };
-              card.addEventListener('transitionend', onEnd);
-            }
+          } else if (!card.classList.contains('hidden-by-filter')) {
+            card.classList.add('hidden-by-filter');
+            const onEnd = (e) => {
+              if (e.propertyName === 'opacity') {
+                card.style.display = 'none';
+                card.setAttribute('aria-hidden', 'true');
+                card.removeEventListener('transitionend', onEnd);
+              }
+            };
+            card.addEventListener('transitionend', onEnd);
           }
         });
       });
